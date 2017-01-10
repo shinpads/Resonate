@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/loginLogo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/logo_test"
+        android:layout_weight="2"/>
+
+    <RelativeLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_weight="1">
+
+        <EditText
+            android:id="@+id/loginEmailField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="Email Address"
+            android:gravity="center_horizontal"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="30dp"
+            android:padding="25dp"
+            android:layout_alignParentTop="true"
+            android:background="@android:color/transparent"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/login_dot_border"
+            android:id="@+id/loginEmailBord"
+            android:layout_alignBottom="@+id/loginEmailField"
+            android:layout_alignLeft="@+id/loginEmailField"
+            android:layout_alignRight="@+id/loginEmailField"
+            android:layout_alignTop="@+id/loginEmailField" />
+
+        <EditText
+            android:id="@+id/loginPassField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="Password"
+            android:gravity="center_horizontal"
+            android:layout_below="@+id/loginEmailField"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="40dp"
+            android:padding="25dp"
+            android:background="@android:color/transparent"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/login_dot_border"
+            android:id="@+id/loginPassBord"
+            android:layout_alignBottom="@+id/loginPassField"
+            android:layout_alignLeft="@+id/loginPassField"
+            android:layout_alignRight="@+id/loginPassField"
+            android:layout_alignTop="@+id/loginPassField" />
+
+        <ImageButton
+            android:id="@+id/loginButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/logo_test"
+            android:layout_below="@+id/loginNoPass"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="33dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginRight="120dp"/>
+
+        <TextView
+            android:id="@+id/loginNoAcc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Don't have an account?"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/loginButton"
+            android:layout_marginTop="60dp"
+            android:clickable="true"
+            android:fontFamily="monospace"
+            android:textStyle="normal|italic"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/loginNoPass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/noPass"
+            android:layout_marginTop="30dp"
+            android:clickable="true"
+            android:autoLink="web"
+            android:fontFamily="monospace"
+            android:textStyle="normal|italic"
+            android:textSize="16dp"
+            android:layout_below="@+id/loginPassField"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>
+

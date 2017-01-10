@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">LocalMusicScene</string>
     <string name="testString">Local Music Scene</string>
+    <string name="noPass"><a href="www.duckduckgo.com" >forgot your password\?</a></string>
 </resources>
