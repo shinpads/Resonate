@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:contentDescription="@string/logoDesc"
+        android:id="@+id/loginLogo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/logo_test"
+        android:layout_weight="2"/>
+
+    <RelativeLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_weight="1">
+
+        <EditText
+            android:id="@+id/loginEmailField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="@string/loginEmail"
+            android:layout_marginTop="15dp"
+            android:padding="25dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"/>
+
+        <EditText
+            android:id="@+id/loginPassField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="@string/loginPass"
+            android:layout_below="@+id/loginEmailField"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginTop="15dp"
+            android:padding="25dp"/>
+
+        <!--android:onClick="MethodName"-->
+
+        <!--android:onClick="MethodName"-->
+
+        <TextView
+            android:id="@+id/loginNoPass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/loginNoPass"
+            android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:autoLink="web"
+            android:textStyle="normal|italic"
+            android:textSize="16sp"
+            android:layout_below="@+id/loginPassField"
+            android:layout_centerHorizontal="true"/>
+
+        <Button
+            android:contentDescription="@string/loginDesc"
+            android:id="@+id/loginButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/loginNoAcc"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="25dp"
+            android:layout_marginRight="105dp"
+            android:layout_marginLeft="105dp"
+            android:background="@drawable/login_button"
+            android:text="@string/loginDesc"
+            android:textColor="?android:attr/textColorPrimaryInverse"
+            android:textSize="18sp"
+            android:clickable="true"/>
+
+        <TextView
+            android:id="@+id/loginNoAcc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/loginNoAcc"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15dp"
+            android:clickable="true"
+            android:textStyle="normal|italic"
+            android:textSize="20sp"/>
+        <!--android:onClick="MethodName"-->
+
+    </RelativeLayout>
+
+
+</LinearLayout>
+

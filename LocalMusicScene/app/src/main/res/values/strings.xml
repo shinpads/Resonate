@@ -1,4 +1,12 @@
 <resources>
-    <string name="app_name">LocalMusicScene</string>
+    <string name="app_name">Local Music Scene</string>
     <string name="testString">Local Music Scene</string>
+    <string name="loginEmail">Email Address</string>
+    <string name="loginPass">Password</string>
+    <string name="loginNoPass">forgot your password?</string>
+    <string name="loginNoAcc">Don\'t have an account?</string>
+    <string name="loginDesc">Login</string>
+    <string name="logoDesc">Logo</string>
 </resources>
+
+
