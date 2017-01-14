@@ -44,7 +44,6 @@
 
         <!--android:onClick="MethodName"-->
 
-        <!--android:onClick="MethodName"-->
 
         <TextView
             android:id="@+id/loginNoPass"
