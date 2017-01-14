@@ -14,9 +14,9 @@ public class SQLConnection {
     private static final String ip = "192.168.2.183:1433"  ; //192.68.2.183
     private static final String dataBaseName = "LOCALMUSICSCENE";
     private static final String username = "Java";
-    private static final String password = "thesolohoarder@123";
+    private static final String password ="thesolohoarder@123";
     private static  String driverClass = "net.sourceforge.jtds.jdbc.Driver";
-    private static final String url = "jdbc:jtds:sqlserver://192.168.2.183:1433/LOCALMUSICSCENE;integratedSecurity=true";
+    private static final String url = "jdbc:jtds:sqlserver://192.168.2.183:1433/master;integratedSecurity=true";
     //private static final String url = "jdbc:jtds:sqlserver://" + ip + ";" + "databaseName=" + dataBaseName + ";user=" + username + ";password=" + password + ";";
     public SQLConnection() {
         ConnectToDataBase();
@@ -31,11 +31,16 @@ public class SQLConnection {
             Class.forName(driverClass);
             conn = DriverManager.getConnection(url,username,password);
             Statement statement = conn.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM view_name");
-            Log.e("SQL","test123");
-            if(resultSet.next()) {
-            Log.i("SQL","SUCCESS");
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM Signup");
+            if(resultSet.isBeforeFirst()){
+                Log.e("SQL","NO DATA");
+            }else{
+                Object resObj = resultSet.getObject(1);
+                if(resObj instanceof String){
+                    Log.i("SQLTABLE",(String)resObj);
+                }
             }
+
         }catch(Exception ex) {
             Log.e("SQLERROR",ex.getLocalizedMessage());
         }
