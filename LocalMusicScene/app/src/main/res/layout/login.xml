@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
     android:orientation="vertical">
 
     <ImageView
+        android:contentDescription="@string/logoDesc"
         android:id="@+id/loginLogo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,86 +23,70 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
-            android:hint="Email Address"
-            android:gravity="center_horizontal"
-            android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="30dp"
+            android:hint="@string/loginEmail"
+            android:layout_marginTop="15dp"
             android:padding="25dp"
             android:layout_alignParentTop="true"
-            android:background="@android:color/transparent"/>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/login_dot_border"
-            android:id="@+id/loginEmailBord"
-            android:layout_alignBottom="@+id/loginEmailField"
-            android:layout_alignLeft="@+id/loginEmailField"
-            android:layout_alignRight="@+id/loginEmailField"
-            android:layout_alignTop="@+id/loginEmailField" />
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"/>
 
         <EditText
             android:id="@+id/loginPassField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:hint="Password"
-            android:gravity="center_horizontal"
+            android:hint="@string/loginPass"
             android:layout_below="@+id/loginEmailField"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginTop="40dp"
-            android:padding="25dp"
-            android:background="@android:color/transparent"/>
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginTop="15dp"
+            android:padding="25dp"/>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/login_dot_border"
-            android:id="@+id/loginPassBord"
-            android:layout_alignBottom="@+id/loginPassField"
-            android:layout_alignLeft="@+id/loginPassField"
-            android:layout_alignRight="@+id/loginPassField"
-            android:layout_alignTop="@+id/loginPassField" />
+        <!--android:onClick="MethodName"-->
 
-        <ImageButton
-            android:id="@+id/loginButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/logo_test"
-            android:layout_below="@+id/loginNoPass"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="33dp"
-            android:layout_marginLeft="120dp"
-            android:layout_marginRight="120dp"/>
-
-        <TextView
-            android:id="@+id/loginNoAcc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Don't have an account?"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/loginButton"
-            android:layout_marginTop="60dp"
-            android:clickable="true"
-            android:fontFamily="monospace"
-            android:textStyle="normal|italic"
-            android:textSize="18dp"/>
+        <!--android:onClick="MethodName"-->
 
         <TextView
             android:id="@+id/loginNoPass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/noPass"
-            android:layout_marginTop="30dp"
+            android:text="@string/loginNoPass"
+            android:layout_marginTop="20dp"
             android:clickable="true"
             android:autoLink="web"
-            android:fontFamily="monospace"
             android:textStyle="normal|italic"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:layout_below="@+id/loginPassField"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"/>
+
+        <Button
+            android:contentDescription="@string/loginDesc"
+            android:id="@+id/loginButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/loginNoAcc"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="25dp"
+            android:layout_marginRight="105dp"
+            android:layout_marginLeft="105dp"
+            android:background="@drawable/login_button"
+            android:text="@string/loginDesc"
+            android:textColor="?android:attr/textColorPrimaryInverse"
+            android:textSize="18sp"
+            android:clickable="true"/>
+
+        <TextView
+            android:id="@+id/loginNoAcc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/loginNoAcc"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15dp"
+            android:clickable="true"
+            android:textStyle="normal|italic"
+            android:textSize="20sp"/>
+        <!--android:onClick="MethodName"-->
 
     </RelativeLayout>
 
