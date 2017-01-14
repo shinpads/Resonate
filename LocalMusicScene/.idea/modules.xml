@@ -4,8 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/LocalMusicScene.iml" filepath="$PROJECT_DIR$/LocalMusicScene.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/jtds-1.2.6/jtds-1.2.6.iml" filepath="$PROJECT_DIR$/jtds-1.2.6/jtds-1.2.6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jtds-1.2.7/jtds-1.2.7.iml" filepath="$PROJECT_DIR$/jtds-1.2.7/jtds-1.2.7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mysql-connector-java-5.1.40-bin/mysql-connector-java-5.1.40-bin.iml" filepath="$PROJECT_DIR$/mysql-connector-java-5.1.40-bin/mysql-connector-java-5.1.40-bin.iml" />
       <module fileurl="file://$PROJECT_DIR$/mysql-connector-java-5.1.40-bin/mysql-connector-java-5.1.40-bin.iml" filepath="$PROJECT_DIR$/mysql-connector-java-5.1.40-bin/mysql-connector-java-5.1.40-bin.iml" />
       <module fileurl="file://$PROJECT_DIR$/mysql-connector-java-5.1.40-bin/mysql-connector-java-5.1.40-bin.iml" filepath="$PROJECT_DIR$/mysql-connector-java-5.1.40-bin/mysql-connector-java-5.1.40-bin.iml" />
     </modules>

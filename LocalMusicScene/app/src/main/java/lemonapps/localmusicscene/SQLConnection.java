@@ -21,7 +21,7 @@ public class SQLConnection {
             Class.forName(driverClass);
             conn = DriverManager.getConnection(url);
             Statement statement = conn.createStatement();
-            ResultSet resultSet =  statement.executeQuery("");
+            ResultSet resultSet =  statement.executeQuery("SELECT * FROM view_name;");
             return conn;
 
         }catch(Exception ex) {
