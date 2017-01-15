@@ -45,7 +45,7 @@
         </EditText>
 
         <Button
-            android:contentDescription="@string/forgotSendDesc"
+            android:contentDescription="@string/resetDesc"
             android:id="@+id/ResetButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
