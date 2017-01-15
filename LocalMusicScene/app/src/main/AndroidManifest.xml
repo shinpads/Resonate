@@ -19,10 +19,13 @@
             android:exported="true"
             android:theme="@style/loginTheme"
             android:screenOrientation="portrait"/>
-        <activity android:name=".HomePage"
+        <activity
+            android:name=".HomePage"
             android:screenOrientation="portrait"/>
-        <activity android:name=".ForgotPassword"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ForgotPassword"
+            android:screenOrientation="portrait"
+            android:theme="@style/loginTheme"/>
     </application>
 
 </manifest>
