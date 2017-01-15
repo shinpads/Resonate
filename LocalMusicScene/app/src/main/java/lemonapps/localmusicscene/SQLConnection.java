@@ -76,30 +76,32 @@ public class SQLConnection {
 
     private static String encryptPassword(String password)
     {
-        try {
-            MessageDigest md = MessageDigest.getInstance("SHA-256");
-            md.update(password.getBytes());
-
-            byte byteData[] = md.digest();
-
-            //convert the byte to hex format method 1
-            StringBuffer sb = new StringBuffer();
-            for (int i = 0; i < byteData.length; i++) {
-                sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
-            }
-
-            //convert the byte to hex format method 2
-            StringBuffer hexString = new StringBuffer();
-            for (int i = 0; i < byteData.length; i++) {
-                String hex = Integer.toHexString(0xff & byteData[i]);
-                if (hex.length() == 1) hexString.append('0');
-                hexString.append(hex);
-                return sb.toString();
-            }
-        }catch (Exception ex){
-            Log.e("SHA-256",ex.getLocalizedMessage());
+        String sha1 = "";
+        try
+        {
+            MessageDigest crypt = MessageDigest.getInstance("SHA-1");
+            crypt.reset();
+            crypt.update(password.getBytes("UTF-8"));
+            sha1 = byteToHex(crypt.digest());
         }
-        return "";
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        return sha1;
+    }
+
+    private static String byteToHex(final byte[] hash)
+    {
+        Formatter formatter = new Formatter();
+        for (byte b : hash)
+        {
+            formatter.format("%02x", b);
+        }
+        String result = formatter.toString();
+        formatter.close();
+        return result;
     }
 
 }

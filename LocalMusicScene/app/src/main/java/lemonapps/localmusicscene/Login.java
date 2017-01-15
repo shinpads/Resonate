@@ -37,7 +37,14 @@ public class Login extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {GoRegister();}});
+        forgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {ForgotPasswordActivity();} });
 
+    }
+    private void ForgotPasswordActivity(){
+        Intent i = new Intent(this,ForgotPassword.class);
+        startActivity(i);
     }
     private void GoRegister(){
         Intent i = new Intent(this,Register.class);
