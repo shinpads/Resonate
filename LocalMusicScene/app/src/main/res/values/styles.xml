@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -21,12 +22,20 @@
         <item name="android:textColorPrimary">@android:color/primary_text_light</item>
         <item name="android:textColorPrimaryInverse">@android:color/primary_text_dark</item>
         <item name="android:textColorSecondary">@android:color/secondary_text_light</item>
-        <item name="android:textColorSecondaryInverse">?android:attr/textColorSecondaryInverseNoDisable</item>
+        <item name="android:textColorSecondaryInverse">
+            ?android:attr/textColorSecondaryInverseNoDisable
+        </item>
         <item name="android:textColor">@color/colorAccent</item>
     </style>
 
+    <style name="AppBaseTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
 
+    <style name="AppBaseTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
+    <style name="AppBaseTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 
 </resources>

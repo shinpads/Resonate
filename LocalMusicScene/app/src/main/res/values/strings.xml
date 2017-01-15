@@ -7,6 +7,9 @@
     <string name="loginNoAcc">Don\'t have an account?</string>
     <string name="loginDesc">Login</string>
     <string name="logoDesc">Logo</string>
+    <string name="title_activity_login">Login</string>
+    <string name="loginInvalid">Invalid Login</string>
+    <string name="loginSuccess">Login Successful</string>
 </resources>
 
 
