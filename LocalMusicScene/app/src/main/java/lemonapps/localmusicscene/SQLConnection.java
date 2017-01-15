@@ -1,11 +1,14 @@
 package lemonapps.localmusicscene;
 import android.annotation.SuppressLint;
-import android.database.CursorJoiner;
-import android.net.NetworkInfo;
 import android.os.StrictMode;
 import android.util.Log;
 
+import java.io.UnsupportedEncodingException;
+import java.security.*;
+
 import java.sql.*;
+import java.util.Formatter;
+
 /**
  * Created by Rob on 1/12/2017.
  */
@@ -36,9 +39,54 @@ public class SQLConnection {
         return conn;
     }
 
-    public static boolean CheckLogin(String user, String pass) {
+    public  boolean CheckLogin(String email, String pass) {
+        //check if email or password is empty
+        if(email.trim().equals("") || pass.trim().equals("")){
+            return false;
+        }
+        pass = encryptPassword(pass);
 
+        String query = "SELECT * FROM Signup WHERE email="+email+"and password ="+pass;
+        try {
+            Statement statement = con.createStatement();
+            ResultSet rs = statement.executeQuery(query);
+            if(rs.next()){
+                return true;
+            }
+        }catch (Exception ex){
+            Log.e("SQL",ex.getLocalizedMessage());
+        }
         return false;
+    }
+
+    private static String encryptPassword(String password)
+    {
+        String sha1 = "";
+        try
+        {
+            MessageDigest crypt = MessageDigest.getInstance("SHA-1");
+            crypt.reset();
+            crypt.update(password.getBytes("UTF-8"));
+            sha1 = byteToHex(crypt.digest());
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        return sha1;
+    }
+
+    private static String byteToHex(final byte[] hash)
+    {
+        Formatter formatter = new Formatter();
+        for (byte b : hash)
+        {
+            formatter.format("%02x", b);
+        }
+        String result = formatter.toString();
+        formatter.close();
+        return result;
     }
 }
 
