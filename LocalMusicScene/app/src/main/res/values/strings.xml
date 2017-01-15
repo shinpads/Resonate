@@ -10,6 +10,10 @@
     <string name="title_activity_login">Login</string>
     <string name="loginInvalid">Invalid Login</string>
     <string name="loginSuccess">Login Successful</string>
+    <string name="signUpFname">First Name</string>
+    <string name="signUpLname">Last Name</string>
+    <string name="signUpChekPass">Confirm Password</string>
+    <string name="signUpDesc">Sign Up</string>
 </resources>
 
 
