@@ -19,6 +19,7 @@
     <string name="confirmForgot">We just sent you an email!\n Please enter your\n \"Reset Code\"\n found in the email</string>
     <string name="resetCode">Reset Code</string>
     <string name="resetDesc">Reset Password</string>
+    <string name="resetChangePass">Change Password</string>
 </resources>
 
 
