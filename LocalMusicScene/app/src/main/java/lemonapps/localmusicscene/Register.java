@@ -1,5 +1,6 @@
 package lemonapps.localmusicscene;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -38,13 +39,22 @@ public class Register extends AppCompatActivity {
             if(field.getText().toString().trim().equals("")){
                 Toast.makeText(getApplicationContext(),"Fill in All Fields",Toast.LENGTH_SHORT).show();
                 field.requestFocus();
-                break;
+                return;
             }
         }
+        //make sure passwords match
         if(!passwordTxt.getText().toString().equals(passwordConfirmTxt.getText().toString())){
             Toast.makeText(getApplicationContext(),"Passwords Don't Match",Toast.LENGTH_SHORT).show();
             passwordTxt.requestFocus();
+            return;
         }
-
+        // PUT INFO INTO DATABASE
+        if(sqlCon.AddAccountToDB(firstTxt.getText().toString(),lastTxt.getText().toString(),emailTxt.getText().toString(),passwordTxt.getText().toString())){
+           Toast.makeText(getApplicationContext(),"Register Success",Toast.LENGTH_SHORT);
+            //GO TO LOGIN PAGE
+            Intent i = new Intent(this,Login.class);
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i);
+        }
     }
 }

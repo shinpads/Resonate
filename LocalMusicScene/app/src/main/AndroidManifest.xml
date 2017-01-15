@@ -10,9 +10,14 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppBaseTheme">
-        <activity android:name=".Register" android:theme="@style/loginTheme" />
-        <activity android:name=".Login" android:exported="true" android:theme="@style/loginTheme">
-        </activity>
+        <activity
+            android:name=".Register"
+            android:theme="@style/loginTheme" />
+        <activity
+            android:name=".Login"
+            android:exported="true"
+            android:theme="@style/loginTheme"></activity>
+        <activity android:name=".HomePage"></activity>
     </application>
 
 </manifest>
