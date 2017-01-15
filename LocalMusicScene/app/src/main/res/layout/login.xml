@@ -42,8 +42,6 @@
             android:layout_marginTop="15dp"
             android:padding="25dp"/>
 
-        <!--android:onClick="MethodName"-->
-
 
         <TextView
             android:id="@+id/loginNoPass"
@@ -63,13 +61,12 @@
             android:id="@+id/loginButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/loginNoAcc"
             android:layout_below="@+id/loginNoPass"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="37dp"
             android:layout_marginRight="105dp"
             android:layout_marginLeft="105dp"
             android:layout_marginTop="15dp"
+            android:layout_marginBottom="50dp"
             android:background="@drawable/login_button"
             android:text="@string/loginDesc"
             android:textColor="?android:attr/textColorPrimaryInverse"
@@ -87,7 +84,6 @@
             android:clickable="true"
             android:textStyle="normal|italic"
             android:textSize="20sp"/>
-        <!--android:onClick="MethodName"-->
 
     </RelativeLayout>
 
