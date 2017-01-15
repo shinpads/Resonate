@@ -46,7 +46,7 @@ public class SQLConnection {
         }
         pass = encryptPassword(pass);
 
-        String query = "SELECT * FROM Signup WHERE Client_Email="+email+"and Client_Password ="+pass;
+        String query = "SELECT * FROM Signup WHERE Client_Email='"+email+"' and Client_Password ='"+pass+"'";
         try {
             Statement statement = con.createStatement();
             ResultSet rs = statement.executeQuery(query);
@@ -56,6 +56,21 @@ public class SQLConnection {
         }catch (Exception ex){
             Log.e("SQL",ex.getLocalizedMessage());
         }
+        return false;
+    }
+    public boolean AddAccountToDB(String fn, String ln, String email, String pass){
+        pass = encryptPassword(pass);
+        Log.i("PASSWORD-ENCRYPY",pass);
+        String update = "INSERT INTO Signup(Client_FName,Client_LName,Client_Email,Client_Password) VALUES('"+fn+"','"+ln+"','"+email+"','"+pass+"')";
+
+        try{
+            Statement statement = con.createStatement();
+            statement.executeUpdate(update);
+            return true;
+        }catch (Exception ex){
+            Log.e("SQL-ADD",ex.getLocalizedMessage());
+        }
+
         return false;
     }
 
