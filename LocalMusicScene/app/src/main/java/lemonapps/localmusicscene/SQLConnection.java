@@ -46,7 +46,7 @@ public class SQLConnection {
         }
         pass = encryptPassword(pass);
 
-        String query = "SELECT * FROM Signup WHERE email="+email+"and password ="+pass;
+        String query = "SELECT * FROM Signup WHERE Client_Email="+email+"and Client_Password ="+pass;
         try {
             Statement statement = con.createStatement();
             ResultSet rs = statement.executeQuery(query);
