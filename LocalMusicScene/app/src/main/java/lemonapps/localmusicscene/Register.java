@@ -55,6 +55,7 @@ public class Register extends AppCompatActivity {
             Intent i = new Intent(this,Login.class);
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);
+            finish();
         }
     }
 }

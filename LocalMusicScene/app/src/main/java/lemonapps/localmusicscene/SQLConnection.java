@@ -46,7 +46,8 @@ public class SQLConnection {
         if(email.trim().equals("") || pass.trim().equals("")){
             return false;
         }
-        pass = generateHash(pass);
+        String salt = getSalt(email);
+        pass = hashPassword(pass,email,salt);
 
         String query = "SELECT * FROM Signup WHERE Client_Email='"+email+"' and Client_Password ='"+pass+"'";
         try {
@@ -61,8 +62,8 @@ public class SQLConnection {
         return false;
     }
     public boolean AddAccountToDB(String fn, String ln, String email, String pass){
-        pass = generateHash(pass);
         String salt = makeSalt();
+        pass = hashPassword(pass,email,salt);
         Log.i("SALTMAKER",salt);
         Log.i("PASSWORD-ENCRYPY",pass);
         String update = "INSERT INTO Signup(Client_FName,Client_LName,Client_Email,Client_Password,SALT) VALUES('"+fn+"','"+ln+"','"+email+"','"+pass+"','"+salt+"')";
@@ -78,12 +79,12 @@ public class SQLConnection {
         return false;
     }
     public String getSalt(String email){
-        String query = "SELECT SALT FROM Signup WHERE email ='" +email+"'";
+        String query = "SELECT SALT FROM Signup WHERE Client_Email ='" +email+"'";
         try{
             Statement statement = con.createStatement();
             ResultSet rs = statement.executeQuery(query);
             if(rs.next()){
-                return rs.getString(0);
+                return rs.getString(1);
             }
         }catch(Exception ex){
             Log.e("SQL SALT",ex.getLocalizedMessage());
@@ -113,8 +114,7 @@ public class SQLConnection {
         }
         return false;
     }
-    public  String hashPassword(String password,String email){
-        String salt = getSalt(email);
+    public  String hashPassword(String password,String email ,String salt){
         String pepper = "XA DX GG XG XX XF FX AD FG XD GG DG GG";
         return generateHash(password + salt + pepper);
     }
