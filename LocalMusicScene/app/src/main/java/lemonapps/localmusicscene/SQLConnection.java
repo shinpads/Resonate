@@ -73,35 +73,36 @@ public class SQLConnection {
 
         return false;
     }
-
-    private static String encryptPassword(String password)
-    {
-        String sha1 = "";
-        try
-        {
-            MessageDigest crypt = MessageDigest.getInstance("SHA-1");
-            crypt.reset();
-            crypt.update(password.getBytes("UTF-8"));
-            sha1 = byteToHex(crypt.digest());
+    public String GetSalt(String email){
+        String query = "SELECT SALT FROM Signup WHERE email ='" +email+"'";
+        try{
+            Statement statement = con.createStatement();
+            ResultSet rs = statement.executeQuery(query);
+            if(rs.next()){
+                return rs.getString(0);
+            }
+        }catch(Exception ex){
+            Log.e("SQL SALT",ex.getLocalizedMessage());
         }
-        catch(Exception e)
-        {
-            e.printStackTrace();
-        }
-
-        return sha1;
+        return "";
     }
-
-    private static String byteToHex(final byte[] hash)
-    {
-        Formatter formatter = new Formatter();
-        for (byte b : hash)
-        {
-            formatter.format("%02x", b);
+    public boolean CheckEmailInDB(String email){
+        String query = "SELECT * FROM Signup WHERE email='"+email+"'";
+        try{
+            Statement statement = con.createStatement();
+            ResultSet rs = statement.executeQuery(query);
+            if(rs.next()){
+                return true;
+            }
+        }catch (Exception ex){
+            Log.e("SQL CHECK EMAIL",ex.getLocalizedMessage());
         }
-        String result = formatter.toString();
-        formatter.close();
-        return result;
+        return false;
+    }
+    public  String hashPassword(String password,String email){
+        String salt = GetSalt(email);
+        String pepper = "XA DX GG XG XX XF FX AD FG XD GG DG GG";
+        return generateHash(password + salt + pepper);
     }
     public static String generateHash(String string) {
         Keccak keccak = new Keccak(1600);
@@ -112,7 +113,8 @@ public class SQLConnection {
             return null;
         }
         // 576,64 is values for sha-512
-        return keccak.getHash(hex, 576, 64);
+        String hashed = keccak.getHash(hex, 576, 64);
+        return hashed;
     }
 
 }
