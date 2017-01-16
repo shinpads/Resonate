@@ -8,6 +8,8 @@ import java.security.*;
 
 import java.sql.*;
 import java.util.Formatter;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * Created by Rob on 1/12/2017.
@@ -60,8 +62,10 @@ public class SQLConnection {
     }
     public boolean AddAccountToDB(String fn, String ln, String email, String pass){
         pass = generateHash(pass);
+        String salt = makeSalt();
+        Log.i("SALTMAKER",salt);
         Log.i("PASSWORD-ENCRYPY",pass);
-        String update = "INSERT INTO Signup(Client_FName,Client_LName,Client_Email,Client_Password) VALUES('"+fn+"','"+ln+"','"+email+"','"+pass+"')";
+        String update = "INSERT INTO Signup(Client_FName,Client_LName,Client_Email,Client_Password,SALT) VALUES('"+fn+"','"+ln+"','"+email+"','"+pass+"','"+salt+"')";
 
         try{
             Statement statement = con.createStatement();
@@ -73,7 +77,7 @@ public class SQLConnection {
 
         return false;
     }
-    public String GetSalt(String email){
+    public String getSalt(String email){
         String query = "SELECT SALT FROM Signup WHERE email ='" +email+"'";
         try{
             Statement statement = con.createStatement();
@@ -85,6 +89,16 @@ public class SQLConnection {
             Log.e("SQL SALT",ex.getLocalizedMessage());
         }
         return "";
+    }
+    public String makeSalt(){
+        char[] alp = {'a','b','b','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+        String salt = "";
+        Random ran = new Random();
+        for(int i=0; i<10; i++){
+            int rand = ran.nextInt(26);
+            salt += alp[rand];
+        }
+        return salt;
     }
     public boolean CheckEmailInDB(String email){
         String query = "SELECT * FROM Signup WHERE email='"+email+"'";
@@ -100,7 +114,7 @@ public class SQLConnection {
         return false;
     }
     public  String hashPassword(String password,String email){
-        String salt = GetSalt(email);
+        String salt = getSalt(email);
         String pepper = "XA DX GG XG XX XF FX AD FG XD GG DG GG";
         return generateHash(password + salt + pepper);
     }
