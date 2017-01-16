@@ -2,6 +2,7 @@ package lemonapps.localmusicscene;
 import android.annotation.SuppressLint;
 import android.os.StrictMode;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.io.UnsupportedEncodingException;
 import java.security.*;
@@ -41,6 +42,7 @@ public class SQLConnection {
         return conn;
     }
 
+
     public  boolean CheckLogin(String email, String pass) {
         //check if email or password is empty
         if(email.trim().equals("") || pass.trim().equals("")){
@@ -67,7 +69,10 @@ public class SQLConnection {
         Log.i("SALTMAKER",salt);
         Log.i("PASSWORD-ENCRYPY",pass);
         String update = "INSERT INTO Signup(Client_FName,Client_LName,Client_Email,Client_Password,SALT) VALUES('"+fn+"','"+ln+"','"+email+"','"+pass+"','"+salt+"')";
-
+        //make sure email isn't already in database
+        if(checkEmailInDB(email)){
+            return false;
+        }
         try{
             Statement statement = con.createStatement();
             statement.executeUpdate(update);
@@ -101,12 +106,13 @@ public class SQLConnection {
         }
         return salt;
     }
-    public boolean CheckEmailInDB(String email){
-        String query = "SELECT * FROM Signup WHERE email='"+email+"'";
+    public boolean checkEmailInDB(String email){
+        String query = "SELECT * FROM Signup WHERE Client_Email='"+email+"'";
         try{
             Statement statement = con.createStatement();
             ResultSet rs = statement.executeQuery(query);
             if(rs.next()){
+                Log.i("EMAILDB","FOUND");
                 return true;
             }
         }catch (Exception ex){

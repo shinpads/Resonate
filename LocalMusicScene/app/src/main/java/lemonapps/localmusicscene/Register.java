@@ -53,9 +53,13 @@ public class Register extends AppCompatActivity {
            Toast.makeText(getApplicationContext(),"Register Success",Toast.LENGTH_SHORT);
             //GO TO LOGIN PAGE
             Intent i = new Intent(this,Login.class);
-            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);
             finish();
+        }
+        else{
+            Toast.makeText(getApplicationContext(),"Email Already In Use",Toast.LENGTH_SHORT).show();
+            emailTxt.requestFocus();
         }
     }
 }
