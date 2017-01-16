@@ -44,7 +44,7 @@ public class SQLConnection {
         if(email.trim().equals("") || pass.trim().equals("")){
             return false;
         }
-        pass = encryptPassword(pass);
+        pass = generateHash(pass);
 
         String query = "SELECT * FROM Signup WHERE Client_Email='"+email+"' and Client_Password ='"+pass+"'";
         try {
@@ -59,7 +59,7 @@ public class SQLConnection {
         return false;
     }
     public boolean AddAccountToDB(String fn, String ln, String email, String pass){
-        pass = encryptPassword(pass);
+        pass = generateHash(pass);
         Log.i("PASSWORD-ENCRYPY",pass);
         String update = "INSERT INTO Signup(Client_FName,Client_LName,Client_Email,Client_Password) VALUES('"+fn+"','"+ln+"','"+email+"','"+pass+"')";
 
@@ -102,6 +102,17 @@ public class SQLConnection {
         String result = formatter.toString();
         formatter.close();
         return result;
+    }
+    public static String generateHash(String string) {
+        Keccak keccak = new Keccak(1600);
+        String hex;
+        try {
+            hex = keccak.getHexStringByByteArray(string.getBytes("UTF-8"));
+        } catch (UnsupportedEncodingException e) {
+            return null;
+        }
+        // 576,64 is values for sha-512
+        return keccak.getHash(hex, 576, 64);
     }
 
 }
