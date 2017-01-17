@@ -27,6 +27,7 @@
     <string name="bandGenre">Genre</string>
     <string name="Bio">Bio</string>
     <string name="manageHometown">Hometown</string>
+    <string name="buttonSave">Save</string>
 
     <string-array name="genre_array">
         <item>Alternative</item>

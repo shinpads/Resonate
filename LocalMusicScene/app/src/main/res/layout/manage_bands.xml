@@ -24,7 +24,7 @@
     </Spinner>
 
     <EditText
-        android:id="@+id/manageBio"
+        android:id="@+id/manageBandBio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/Bio"
@@ -35,6 +35,7 @@
         />
 
     <EditText
+        android:id="@+id/manageBandHomeTown"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textCapWords"
@@ -43,5 +44,21 @@
         android:padding="25dp"
         android:hint="@string/manageHometown"
         />
+
+    <Button
+        android:contentDescription="@string/buttonSave"
+        android:id="@+id/saveBandInfoButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="105dp"
+        android:layout_marginLeft="105dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/login_button"
+        android:text="@string/buttonSave"
+        android:textColor="?android:attr/textColorPrimaryInverse"
+        android:textSize="18sp"
+        android:clickable="true"/>
+
 
 </LinearLayout>

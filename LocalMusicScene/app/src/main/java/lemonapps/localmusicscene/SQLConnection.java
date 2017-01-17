@@ -149,7 +149,6 @@ public class SQLConnection {
                 //UPDATE
                 update = "";
 
-
             } else {
                 //INSERT
                 update = "";
