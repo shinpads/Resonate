@@ -20,6 +20,9 @@
     <string name="resetCode">Reset Code</string>
     <string name="resetDesc">Reset Password</string>
     <string name="resetChangePass">Change Password</string>
+    <string name="newPass">New Password</string>
+    <string name="oldPass">Old Password</string>
+    <string name="newPassConfirm">Confirm New Password</string>
 </resources>
 
 

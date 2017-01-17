@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/ChgPassOld"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:hint="@string/oldPass"
+        android:padding="25dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ChgPassNew"
+        android:inputType="textPassword"
+        android:hint="@string/newPass"
+        android:padding="25dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ChgPassNewConfirm"
+        android:inputType="textPassword"
+        android:hint="@string/newPassConfirm"
+        android:padding="25dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"/>
+
+    <Button
+        android:contentDescription="@string/resetChangePass"
+        android:id="@+id/ChgPassButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="105dp"
+        android:layout_marginLeft="105dp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/login_button"
+        android:text="@string/resetChangePass"
+        android:textColor="?android:attr/textColorPrimaryInverse"
+        android:textSize="18sp"
+        android:clickable="true"/>
+
+</LinearLayout>
