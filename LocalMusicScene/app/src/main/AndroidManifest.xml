@@ -12,20 +12,21 @@
         android:theme="@style/AppBaseTheme">
         <activity
             android:name=".Register"
-            android:theme="@style/loginTheme"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/loginTheme" />
         <activity
             android:name=".Login"
             android:exported="true"
-            android:theme="@style/loginTheme"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/loginTheme" />
         <activity
             android:name=".HomePage"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ForgotPassword"
             android:screenOrientation="portrait"
-            android:theme="@style/loginTheme"/>
+            android:theme="@style/loginTheme" />
+        <activity android:name=".ManageBand"></activity>
     </application>
 
 </manifest>

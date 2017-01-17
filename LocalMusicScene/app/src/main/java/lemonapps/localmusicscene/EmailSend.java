@@ -4,28 +4,36 @@ package lemonapps.localmusicscene;
  * Created by Rob on 1/14/2017.
  */
 import android.util.Log;
-
 import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
 
 public class EmailSend {
-    private boolean SendEmail(String to, String subject, String message){
-        String host = "";
-        String from = "";
-        Properties properties = System.getProperties();
-        properties.setProperty("mail.smtp.host",host);
+    public static boolean SendEmail(String to, String subject, String message){
+        Properties properties = new Properties();
+        properties.put("mail.smtp.host","smpt.gmail.com");
+        properties.put("mail.smtp.socketFactory.port","465");
+        properties.put("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory");
+        properties.put("mail.smtp.auth","true");
+        properties.put("mail.smtp.port","465");
+
         Session session = Session.getDefaultInstance(properties);
+        new javax.mail.Authenticator(){
+            protected PasswordAuthentication getPasswordAuth(){
+                return new PasswordAuthentication("localmusicsceneconfirm@gmail.com","thesolohoarder@123");
+            }
+        };
+
         try{
             MimeMessage msg = new MimeMessage(session);
-            msg.setFrom(new InternetAddress(from));
+            msg.setFrom(new InternetAddress("localmusicsceneconfirm@gmail.com"));
             msg.addRecipient(Message.RecipientType.TO,new InternetAddress(to));
             msg.setSubject(subject);
             msg.setText(message);
             Transport.send(msg);
-            return true;
+
         }catch (Exception ex){
-            Log.e("JAVAMAIL",ex.getLocalizedMessage());
+            Log.e("EMAILSEND",ex.getLocalizedMessage());
         }
         return false;
     }

@@ -24,6 +24,6 @@ public class ForgotPassword extends AppCompatActivity {
         });
     }
     private void SendEmailCode() {
-
+        EmailSend.SendEmail(emailTxt.getText().toString(),"Confirmation Email","Ronald Wesley");
     }
 }

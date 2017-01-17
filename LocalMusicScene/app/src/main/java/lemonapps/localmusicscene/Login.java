@@ -41,10 +41,10 @@ public class Login extends AppCompatActivity {
         forgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {ForgotPasswordActivity();} });
-        if(checkIfLoggedIn()){
+       /* if(checkIfLoggedIn()){
             //GO TO HOME PAGE
             Toast.makeText(getApplicationContext(),"Already Logged In",Toast.LENGTH_SHORT).show();
-        }
+        }*/
 
     }
     private void ForgotPasswordActivity(){
