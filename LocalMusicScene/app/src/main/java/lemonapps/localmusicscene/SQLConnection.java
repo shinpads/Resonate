@@ -1,5 +1,6 @@
 package lemonapps.localmusicscene;
 import android.annotation.SuppressLint;
+import android.net.NetworkInfo;
 import android.os.StrictMode;
 import android.util.Log;
 import android.widget.Toast;
@@ -42,7 +43,6 @@ public class SQLConnection {
         return conn;
     }
 
-
     public  boolean CheckLogin(String email, String pass) {
         //check if email or password is empty
         if(email.trim().equals("") || pass.trim().equals("")){
@@ -56,6 +56,7 @@ public class SQLConnection {
             Statement statement = con.createStatement();
             ResultSet rs = statement.executeQuery(query);
             if(rs.next()){
+                con.close(); //close connection to sql server
                 return true;
             }
         }catch (Exception ex){
@@ -112,7 +113,6 @@ public class SQLConnection {
             Statement statement = con.createStatement();
             ResultSet rs = statement.executeQuery(query);
             if(rs.next()){
-                Log.i("EMAILDB","FOUND");
                 return true;
             }
         }catch (Exception ex){
@@ -135,6 +135,44 @@ public class SQLConnection {
         // 576,64 is values for sha-512
         String hashed = keccak.getHash(hex, 576, 64);
         return hashed;
+    }
+
+    /*
+        BAND DATA BASE STUFF
+
+     */
+    public boolean saveBandInfo(String name, String newName,String genere, String bio, String location){
+        String update = "";
+        try {
+            Statement statement = con.createStatement();
+            if (checkBandInDB(name)) {
+                //UPDATE
+                update = "";
+
+
+            } else {
+                //INSERT
+                update = "";
+            }
+            statement.executeUpdate(update);
+            return true;
+        }catch (Exception ex){
+            Log.e("SQL-SAVEBANDINFO",ex.getLocalizedMessage());
+        }
+        return false;
+    }
+    public boolean checkBandInDB(String bandName){
+        String query = "";
+        try{
+            Statement statement = con.createStatement();
+            ResultSet rs = statement.executeQuery(query);
+            if(rs.next()){
+                return true;
+            }
+        }catch (Exception ex){
+            Log.e("BANDINDBSQL", ex.getLocalizedMessage());
+        }
+        return false;
     }
 
 }
