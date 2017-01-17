@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/manageBandName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textCapWords"
+        android:hint="@string/bandName"
+        android:padding="25dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"/>
+
+    <Spinner
+        android:id="@+id/manageBandGenreSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown"
+        android:entries="@array/genre_genres"
+        android:layout_marginLeft="35dp">
+    </Spinner>
+
+    <EditText
+        android:id="@+id/manageBio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/Bio"
+        android:inputType="textImeMultiLine"
+        android:padding="25dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textCapWords"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:padding="25dp"
+        android:hint="@string/manageHometown"
+        />
+
+</LinearLayout>
