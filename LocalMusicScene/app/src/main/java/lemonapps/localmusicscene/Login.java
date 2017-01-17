@@ -61,7 +61,10 @@ public class Login extends AppCompatActivity {
         if(sqlCon.CheckLogin(email,password)){
             //Go To home Page <------------
             saveLogged();
-            Toast.makeText(getApplicationContext(), R.string.loginSuccess, Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(this,HomePage.class);
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(i);
+            finish();
         }else{
             Toast.makeText(getApplicationContext(), R.string.loginInvalid, Toast.LENGTH_SHORT).show();
         }
