@@ -1,6 +1,7 @@
 package lemonapps.localmusicscene;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -40,6 +41,10 @@ public class Login extends AppCompatActivity {
         forgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {ForgotPasswordActivity();} });
+       /* if(checkIfLoggedIn()){
+            //GO TO HOME PAGE
+            Toast.makeText(getApplicationContext(),"Already Logged In",Toast.LENGTH_SHORT).show();
+        }*/
 
     }
     private void ForgotPasswordActivity(){
@@ -55,9 +60,22 @@ public class Login extends AppCompatActivity {
         String password = passwordTxt.getText().toString();
         if(sqlCon.CheckLogin(email,password)){
             //Go To home Page <------------
-            Toast.makeText(getApplicationContext(), R.string.loginSuccess, Toast.LENGTH_LONG).show();
+            saveLogged();
+            Intent i = new Intent(this,HomePage.class);
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(i);
+            finish();
         }else{
-            Toast.makeText(getApplicationContext(), R.string.loginInvalid, Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), R.string.loginInvalid, Toast.LENGTH_SHORT).show();
         }
+    }
+    private boolean checkIfLoggedIn(){
+        SharedPreferences preferences = getSharedPreferences("pref",MODE_PRIVATE);
+        return preferences.getBoolean("logged",false);
+    }
+    private void saveLogged(){
+        SharedPreferences.Editor editor = getSharedPreferences("pref",MODE_PRIVATE).edit();
+        editor.putBoolean("logged",true);
+        editor.apply();
     }
 }

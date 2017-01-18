@@ -20,6 +20,30 @@
     <string name="resetCode">Reset Code</string>
     <string name="resetDesc">Reset Password</string>
     <string name="resetChangePass">Change Password</string>
+    <string name="newPass">New Password</string>
+    <string name="oldPass">Old Password</string>
+    <string name="newPassConfirm">Confirm New Password</string>
+    <string name="bandName">Band Name</string>
+    <string name="bandGenre">Genre</string>
+    <string name="Bio">Bio</string>
+    <string name="manageHometown">Hometown</string>
+    <string name="buttonSave">Save</string>
+
+    <string-array name="genre_array">
+        <item>Alternative</item>
+        <item>Blues</item>
+        <item>Classical</item>
+        <item>Country</item>
+        <item>Electronic</item>
+        <item>Folk</item>
+        <item>Jazz</item>
+        <item>Metal</item>
+        <item>Pop</item>
+        <item>Rock</item>
+        <item>Hip Hop/Rap</item>
+        <item>Reggae/Ska</item>
+        <item>World</item>
+    </string-array>
 </resources>
 
 
