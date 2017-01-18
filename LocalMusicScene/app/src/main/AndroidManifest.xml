@@ -12,7 +12,6 @@
         android:theme="@style/loginTheme">
         <activity
             android:name=".Register"
-
             android:screenOrientation="portrait"
             android:theme="@style/loginTheme" />
         <activity

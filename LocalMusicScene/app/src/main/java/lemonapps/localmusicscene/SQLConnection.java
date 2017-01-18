@@ -142,7 +142,7 @@ public class SQLConnection {
 
      */
     public boolean saveBandInfo(String name, String newName,String genere, String bio, String location){
-        String update = "";
+        String update;
         try {
             Statement statement = con.createStatement();
             if (checkBandInDB(name)) {

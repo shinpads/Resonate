@@ -22,9 +22,9 @@ public class ForgotPassword extends AppCompatActivity {
                 SendEmailCode();
             }
         });
-        };
+        }
     private void SendEmailCode() {
-        EmailSend.SendEmail(emailTxt.getText().toString(),"Confirmation Email","Ronald Wesley");
+        EmailSend.sendEmail(emailTxt.getText().toString(),"Confirmation Email","Ronald Wesley");
     }
     }
 
