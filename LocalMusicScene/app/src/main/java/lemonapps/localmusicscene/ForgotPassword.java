@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import java.util.Random;
 
 public class ForgotPassword extends AppCompatActivity {
     EditText emailTxt;
@@ -24,7 +27,20 @@ public class ForgotPassword extends AppCompatActivity {
         });
         }
     private void SendEmailCode() {
-        EmailSend.sendEmail(emailTxt.getText().toString(),"Confirmation Email","Ronald Wesley");
+        if(EmailSend.sendEmail(emailTxt.getText().toString(),"Confirmation Email",makeCode())){
+            Toast.makeText(getApplicationContext(),"Email Sent",Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(getApplicationContext(),"Failed to Send",Toast.LENGTH_SHORT).show();
+        }
+    }
+    public static String makeCode(){
+        String code = "";
+        Random ran = new Random();
+        for(int i=0; i<10; i++){
+            int rand = ran.nextInt(26);
+            code += String.valueOf(rand);
+        }
+        return code;
     }
     }
 

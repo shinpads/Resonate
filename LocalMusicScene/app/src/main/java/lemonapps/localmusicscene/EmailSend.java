@@ -5,13 +5,15 @@ package lemonapps.localmusicscene;
  */
 import android.app.Activity;
 import android.util.Log;
+import android.widget.Toast;
+
 import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
 
 public class EmailSend extends Activity {
 
-    public static void sendEmail(String to, String subject, String text) {
+    public static boolean sendEmail(String to, String subject, String text) {
 
                 Properties props = new Properties();
                 props.put("mail.smtp.host", "smtp.gmail.com");
@@ -34,12 +36,14 @@ public class EmailSend extends Activity {
                     message.setSubject(subject);
                     message.setContent(text, "text/html; charset=utf-8");
                     Transport.send(message);
+                    return true;
 
                 } catch (Exception e) {
                     String error = (e.getLocalizedMessage() == null)?"error message null":e.getLocalizedMessage();
                    Log.e("ERROR",error);
                 }
-
-
+        return false;
     }
+
+
 }
