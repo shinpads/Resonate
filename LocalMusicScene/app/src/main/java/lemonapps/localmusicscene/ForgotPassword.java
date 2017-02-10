@@ -12,6 +12,7 @@ import java.util.Random;
 public class ForgotPassword extends AppCompatActivity {
     EditText emailTxt;
     Button sndEmailBtn;
+    String code = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +28,8 @@ public class ForgotPassword extends AppCompatActivity {
         });
         }
     private void SendEmailCode() {
-        if(EmailSend.sendEmail(emailTxt.getText().toString(),"Confirmation Email",makeCode())){
+        code = makeCode();
+        if(EmailSend.sendEmail(emailTxt.getText().toString(),"Confirmation Email",code)){
             Toast.makeText(getApplicationContext(),"Email Sent",Toast.LENGTH_SHORT).show();
         }else{
             Toast.makeText(getApplicationContext(),"Failed to Send",Toast.LENGTH_SHORT).show();
