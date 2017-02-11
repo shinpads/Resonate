@@ -15,6 +15,7 @@
         android:layout_marginRight="35dp"
         android:elevation="5dp"/>
 
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -52,6 +53,7 @@
         android:textColor="?android:attr/textColorPrimaryInverse"
         android:textSize="18sp"
         android:clickable="true"
-        android:elevation="15dp"/>
+        android:elevation="15dp"
+        />
 
 </LinearLayout>

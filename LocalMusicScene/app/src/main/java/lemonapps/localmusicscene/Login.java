@@ -17,6 +17,7 @@ public class Login extends AppCompatActivity {
     TextView register;
     TextView forgotPassword;
     SQLConnection sqlCon;
+    public static String emailStr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +58,7 @@ public class Login extends AppCompatActivity {
     }
     private void TryLogin(){
         String email = emailTxt.getText().toString();
+        String emailStr = email;
         String password = passwordTxt.getText().toString();
         if(sqlCon.CheckLogin(email,password)){
             //Go To home Page <------------
