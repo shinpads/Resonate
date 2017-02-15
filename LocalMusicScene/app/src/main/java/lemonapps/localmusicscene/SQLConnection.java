@@ -56,7 +56,7 @@ public class SQLConnection {
             Statement statement = con.createStatement();
             ResultSet rs = statement.executeQuery(query);
             if(rs.next()){
-                con.close(); //close connection to sql server
+                //con.close(); //close connection to sql server
                 return true;
             }
         }catch (Exception ex){
@@ -82,6 +82,17 @@ public class SQLConnection {
             Log.e("SQL-ADD",ex.getLocalizedMessage());
         }
 
+        return false;
+    }
+    public boolean changeAccountPassword(String email, String newpassword){
+        String update = "UPDATE Signup SET Client_Password = '" +newpassword + "' WHERE Client_Email = "+email+";";
+        try{
+            Statement statement = con.createStatement();
+            statement.executeUpdate(update);
+            return true;
+        }catch(Exception ex){
+            Log.e("CHANGE PASSWORD ERROR",ex.getMessage());
+        }
         return false;
     }
     public String getSalt(String email){

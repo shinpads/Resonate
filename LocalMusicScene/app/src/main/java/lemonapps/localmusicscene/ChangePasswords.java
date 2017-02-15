@@ -37,7 +37,7 @@ public class ChangePasswords extends AppCompatActivity {
     private void passCheck () {
         if (con.CheckLogin(Login.emailStr,oldPass.getText().toString())){
             if (newPass.getText().toString().equals(confirmNewPass.getText().toString())){
-
+                con.changeAccountPassword(Login.emailStr,newPass.getText().toString());
             }
         }
 
