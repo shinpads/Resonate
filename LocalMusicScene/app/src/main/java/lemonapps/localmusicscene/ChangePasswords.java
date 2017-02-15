@@ -9,10 +9,10 @@ import android.widget.EditText;
 import android.os.Bundle;
 
 public class ChangePasswords extends AppCompatActivity {
-    Button ChangeButton;
-    EditText OldPass;
-    EditText NewPass;
-    EditText ConfirmNewPass;
+    Button changeButton;
+    EditText oldPass;
+    EditText newPass;
+    EditText confirmNewPass;
 
     SQLConnection con = new SQLConnection();
 
@@ -20,13 +20,13 @@ public class ChangePasswords extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_passwords);
-        ChangeButton = (Button)findViewById(R.id.ChgPassButton);
-        OldPass = (EditText)findViewById(R.id.ChgPassOld);
-        NewPass = (EditText)findViewById(R.id.ChgPassNew);
-        ConfirmNewPass = (EditText)findViewById(R.id.ChgPassNewConfirm);
+        changeButton = (Button)findViewById(R.id.ChgPassButton);
+        oldPass = (EditText)findViewById(R.id.ChgPassOld);
+        newPass = (EditText)findViewById(R.id.ChgPassNew);
+        confirmNewPass = (EditText)findViewById(R.id.ChgPassNewConfirm);
 
 
-        ChangeButton.setOnClickListener(new View.OnClickListener() {
+        changeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 passCheck();
@@ -35,8 +35,8 @@ public class ChangePasswords extends AppCompatActivity {
     }
 
     private void passCheck () {
-        if (con.CheckLogin(Login.emailStr,OldPass.getText().toString())){
-            if (NewPass.getText().toString().equals(ConfirmNewPass.getText().toString())){
+        if (con.CheckLogin(Login.emailStr,oldPass.getText().toString())){
+            if (newPass.getText().toString().equals(confirmNewPass.getText().toString())){
 
             }
         }
