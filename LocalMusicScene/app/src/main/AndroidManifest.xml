@@ -12,24 +12,26 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/loginTheme">
+        android:theme="@style/ResonateTheme">
         <activity
             android:name=".Register"
-            android:screenOrientation="portrait"
-            android:theme="@style/loginTheme" />
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Login"
             android:exported="true"
-            android:screenOrientation="portrait"
-            android:theme="@style/loginTheme" />
+            android:screenOrientation="portrait">
+                <intent-filter>
+                    <action android:name="android.intent.action.MAIN" />
+                    <category android:name="android.intent.category.LAUNCHER" />
+                </intent-filter>
+        </activity>
 
         <activity
             android:name=".HomePage"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ForgotPassword"
-            android:screenOrientation="portrait"
-            android:theme="@style/loginTheme" />
+            android:screenOrientation="portrait"/>
         <activity android:name=".ChangePasswords"
             android:screenOrientation="portrait"/>
         <activity android:name=".ManageBand"

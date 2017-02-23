@@ -19,7 +19,7 @@ public class ChangePasswords extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_change_passwords);
+        setContentView(R.layout.change_pass);
         ChangeButton = (Button)findViewById(R.id.ChgPassButton);
         OldPass = (EditText)findViewById(R.id.ChgPassOld);
         NewPass = (EditText)findViewById(R.id.ChgPassNew);
