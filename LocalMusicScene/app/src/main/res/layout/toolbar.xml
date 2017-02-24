@@ -32,7 +32,7 @@
 
             <TextView
                 android:id="@+id/taxbarLocationText"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="@string/taxBarLocation"
                 android:textSize="18sp"
@@ -42,7 +42,7 @@
                 android:layout_centerHorizontal="true"
                 android:gravity="center"
                 android:clickable="true"
-                android:textColor="@color/ltegry"/>
+                android:textColor="@color/wht"/>
 
             <ImageButton
                 android:id="@+id/taxbarLocationButton"
@@ -59,97 +59,28 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbarLow"
+    <android.support.design.widget.TabLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="wrap_content"
         android:background="@color/blk"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:contentInsetLeft="0dp"
-        app:contentInsetStart="0dp"
-        app:contentInsetRight="0dp"
-        app:contentInsetEnd="0dp"
-        android:elevation="4dp">
+        app:tabSelectedTextColor="@color/ltegry"
+        app:tabTextColor="@color/nosel"
+        app:tabTextAppearance="@style/TabTextSide">
 
-        <LinearLayout
+        <android.support.design.widget.TabItem
+            android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/toolbarFeed"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/feed"
-                    android:textColor="@color/ltegry"
-                    android:background="@android:color/transparent"
-                    android:fontFamily="monospace"
-                    android:textSize="18sp"/>
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/select_toolbar"/>
+            android:text="Shows"/>
+        <android.support.design.widget.TabItem
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Bands"/>
+        <android.support.design.widget.TabItem
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Forum"/>
 
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-            <Button
-                android:id="@+id/toolbarBands"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/bands"
-                android:textColor="@color/medgry"
-                android:background="@android:color/transparent"
-                android:fontFamily="monospace"
-                android:textSize="18sp"/>
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/no_select_toolbar"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/toolbarForum"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/forum"
-                    android:textColor="@color/medgry"
-                    android:background="@android:color/transparent"
-                    android:fontFamily="monospace"
-                    android:textSize="18sp"/>
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/no_select_toolbar"/>
-
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-    </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.TabLayout>
 
 </LinearLayout>

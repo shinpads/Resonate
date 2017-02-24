@@ -3,7 +3,8 @@
     <color name="blk">#000000</color>
     <color name="wht">#ffffff</color>
     <color name="drkgry">#e71c1d26</color>
-    <color name="ltegry">#d9d9d9</color>
+    <color name="ltegry">#cccccc</color>
     <color name="accent">#8200ff</color>
     <color name="medgry">#c7898989</color>
+    <color name="nosel">#28ffffff</color>
 </resources>
