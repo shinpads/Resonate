@@ -3,9 +3,9 @@
     package="lemonapps.localmusicscene">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -18,7 +18,12 @@
         android:theme="@style/loginTheme">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
+<<<<<<< HEAD
             android:value="AIzaSyD2s-AD98g1GZf54JB4td70QIP52qYxmu8"/>
+>>>>>>> origin/master
+=======
+            android:value="AIzaSyD2s-AD98g1GZf54JB4td70QIP52qYxmu8" />
+
 >>>>>>> origin/master
         <activity
             android:name=".Register"
@@ -37,25 +42,38 @@
             android:theme="@style/loginTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 >>>>>>> origin/master
         </activity>
-
         <activity
             android:name=".HomePage"
             android:screenOrientation="portrait"/>
         <activity
             android:name=".ForgotPassword"
+<<<<<<< HEAD
             android:screenOrientation="portrait"/>
         <activity android:name=".ChangePasswords"
             android:screenOrientation="portrait"/>
         <activity android:name=".ManageBand"
             android:screenOrientation="portrait"/>
+=======
+            android:screenOrientation="portrait"
+            android:theme="@style/loginTheme" />
+        <activity
+            android:name=".ChangePasswords"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ManageBand"
+            android:screenOrientation="portrait" />
+
+>>>>>>> origin/master
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyD2s-AD98g1GZf54JB4td70QIP52qYxmu8"/>
+            android:value="AIzaSyD2s-AD98g1GZf54JB4td70QIP52qYxmu8" />
 
+        <activity android:name=".ForgotPasswordCode"></activity>
     </application>
 
 </manifest>
