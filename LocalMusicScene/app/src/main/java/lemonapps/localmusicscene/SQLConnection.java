@@ -18,7 +18,7 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class SQLConnection {
     private Connection con;
-    private static final String ip = "184.146.24.232:1433";
+    private static final String ip = "70.54.75.129:1433";
     private static final String database = "master";
     private static final String username = "Java";
     private static final String password ="thesolohoarder@123";
@@ -85,7 +85,8 @@ public class SQLConnection {
         return false;
     }
     public boolean changeAccountPassword(String email, String newpassword){
-        String update = "UPDATE Signup SET Client_Password = '" +newpassword + "' WHERE Client_Email = "+email+";";
+        newpassword = hashPassword(newpassword,email,getSalt(email));
+        String update = "UPDATE Signup SET Client_Password = '" +newpassword + "' WHERE Client_Email = '"+email+"';";
         try{
             Statement statement = con.createStatement();
             statement.executeUpdate(update);

@@ -50,7 +50,8 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyD2s-AD98g1GZf54JB4td70QIP52qYxmu8" />
 
-        <activity android:name=".ForgotPasswordCode"></activity>
+        <activity android:name=".ForgotPasswordCode" />
+        <activity android:name=".ForgotPaswordChangePassword"></activity>
     </application>
 
 </manifest>

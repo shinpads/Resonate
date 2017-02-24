@@ -1,5 +1,6 @@
 package lemonapps.localmusicscene;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,7 @@ public class ForgotPassword extends AppCompatActivity {
     EditText emailTxt;
     Button sndEmailBtn;
     public static String code = "";
+    public static String email = "";
     SQLConnection con;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,13 +33,17 @@ public class ForgotPassword extends AppCompatActivity {
         con = new SQLConnection();
         }
     private void SendEmailCode() {
-        if (con.checkEmailInDB(emailTxt.getText().toString())){
+        if (!con.checkEmailInDB(emailTxt.getText().toString())){
             Toast.makeText(getApplicationContext(),"Invalid Email.",Toast.LENGTH_SHORT).show();
             return;
         }
+        email = emailTxt.getText().toString();
         code = makeCode();
         if(EmailSend.sendEmail(emailTxt.getText().toString(),"Confirmation Email",code)){
             Toast.makeText(getApplicationContext(),"Email Sent",Toast.LENGTH_SHORT).show();
+            Intent i  = new Intent(this,ForgotPasswordCode.class);
+            startActivity(i);
+            finish();
         }else{
             Toast.makeText(getApplicationContext(),"Failed to Send",Toast.LENGTH_SHORT).show();
         }
