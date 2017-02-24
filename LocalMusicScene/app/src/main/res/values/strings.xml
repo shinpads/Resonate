@@ -32,6 +32,11 @@
     <string name="feed">Shows</string>
     <string name="forum">Forum</string>
     <string name="bands">Bands</string>
+    <string name="home">Home</string>
+    <string name="savedEvents">Saved Events</string>
+    <string name="favBands">Favourite Bands</string>
+    <string name="manBands">Manage Band</string>
+    <string name="notifs">Notifications</string>
 
 
     <string-array name="genre_array">
