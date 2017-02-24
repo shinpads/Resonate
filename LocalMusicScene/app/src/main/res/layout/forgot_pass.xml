@@ -6,19 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:contentDescription="@string/logoDesc"
-        android:id="@+id/signUpLogo"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:srcCompat="@mipmap/ic_launcher"
-        android:layout_weight="2"
-        android:elevation="10dp"/>
+    <include layout="@layout/logo"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/forgotText"
@@ -26,13 +18,12 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:padding="25dp"
-            android:layout_marginLeft="35dp"
-            android:layout_marginRight="35dp"
             android:text="@string/forgotText"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:gravity="center_horizontal"/>
+            android:textSize="25sp"
+            android:gravity="center_horizontal"
+            android:fontFamily="monospace"
+            android:layout_margin="15dp"
+            android:textColor="@color/drkgry"/>
 
         <EditText
             android:id="@+id/forgotEmailField"
@@ -44,8 +35,7 @@
             android:padding="25dp"
             android:layout_marginLeft="35dp"
             android:layout_marginRight="35dp"
-            android:layout_below="@+id/forgotText"
-            android:elevation="5dp"/>
+            android:layout_below="@+id/forgotText"/>
 
         <Button
             android:contentDescription="@string/forgotSendDesc"
@@ -61,7 +51,8 @@
             android:textColor="?android:attr/textColorPrimaryInverse"
             android:textSize="18sp"
             android:clickable="true"
-            android:elevation="15dp"/>
+            android:fontFamily="monospace"
+            android:elevation="2dp"/>
 
     </RelativeLayout>
 
