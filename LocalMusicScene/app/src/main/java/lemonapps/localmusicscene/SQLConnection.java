@@ -19,7 +19,6 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class SQLConnection {
     private Connection con;
-
     public static  String ip = "";
     private static final String database = "master";
     private static final String username = "Java";
