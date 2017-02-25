@@ -37,7 +37,8 @@
     <string name="favBands">Favourite Bands</string>
     <string name="manBands">Manage Band</string>
     <string name="notifs">Notifications</string>
-
+    <string name="fname">fName</string>
+    <string name="dname">dName</string>
 
     <string-array name="genre_array">
         <item>Alternative</item>
