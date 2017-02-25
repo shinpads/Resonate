@@ -42,12 +42,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Jan 14"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="5dp"
-                    android:textColor="@color/ltegry"
+                    android:textColor="@color/wht"
                     android:textSize="26sp"
-                    android:layout_gravity="start"/>
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="monospace"/>
 
                 <ImageView
                     android:layout_width="match_parent"
@@ -66,9 +65,9 @@
                     android:id="@+id/cardTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Masks Off"
-                    android:textColor="@color/ltegry"
-                    android:textSize="24sp"
+                    android:text="Masks Off with everyone"
+                    android:textColor="@color/wht"
+                    android:textSize="18sp"
                     android:fontFamily="monospace"
                     android:layout_alignParentTop="true"
                     android:gravity="center_horizontal"/>
@@ -78,7 +77,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Perivale"
-                    android:textColor="@color/ltegry"
+                    android:textColor="@color/wht"
                     android:textSize="16sp"
                     android:fontFamily="monospace"
                     android:layout_below="@+id/cardTitle"
@@ -93,10 +92,10 @@
                     android:src="@drawable/clock"
                     android:layout_marginEnd="5dp"
                     android:layout_marginRight="5dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="5dp"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginLeft="25dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
                     android:layout_below="@+id/cardBandName"/>
 
                 <TextView
@@ -109,7 +108,7 @@
                     android:layout_toRightOf="@id/cardClockIcon"
                     android:layout_toEndOf="@id/cardClockIcon"
                     android:layout_below="@id/cardBandName"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginStart="5dp"
                     android:textSize="15sp"
@@ -124,8 +123,8 @@
                     android:layout_marginRight="5dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginLeft="25dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
                     android:layout_below="@+id/cardClockIcon"/>
 
                 <TextView
@@ -153,8 +152,8 @@
                     android:layout_marginRight="5dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginLeft="25dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
                     android:layout_below="@id/cardHouseIcon"/>
 
                 <TextView
@@ -171,6 +170,17 @@
                     android:layout_marginStart="5dp"
                     android:textSize="15sp"
                     android:gravity="center_vertical"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="After a named change from False Face Society the band has been reincarnate..."
+                    android:layout_below="@id/cardMoneyIcon"
+                    android:textColor="@color/medgry"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:textStyle="italic"/>
 
 
 
