@@ -2,7 +2,7 @@
 <resources>
 
 
-    <style name="ResonateTheme" parent="Theme.AppCompat.Light.NoActionBar" >
+    <style name="ResonateTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/ltegry</item>
         <item name="android:colorBackground">@color/wht</item>
         <item name="android:textColorPrimaryInverse">@color/wht</item>
@@ -20,9 +20,13 @@
         <item name="android:fontFamily">monospace</item>
     </style>
 
-    <style name="navText" parent = "ResonateTheme">
+    <style name="navText" parent="ResonateTheme">
         <item name="android:fontFamily">monospace</item>
         <item name="android:textColor">@color/blk</item>
     </style>
+
+    <style name="ResonateTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="ResonateTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
 

@@ -10,7 +10,7 @@
     android:orientation="vertical">
 
     <include layout="@layout/toolbar"/>
-
+    <include layout="@layout/nav_drawer"/>
 
     <android.support.v7.widget.CardView
         android:id="@+id/cardView"
