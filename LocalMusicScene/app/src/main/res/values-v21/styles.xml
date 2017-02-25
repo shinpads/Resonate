@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="ResonateTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+    <style name="ResonateTheme" parent="Theme.AppCompat.Light.NoActionBar" >
         <item name="colorPrimary">@color/ltegry</item>
         <item name="android:colorBackground">@color/wht</item>
         <item name="android:textColorPrimaryInverse">@color/wht</item>
@@ -10,11 +11,16 @@
         <item name="android:textColorPrimary">@color/blk</item>
         <item name="colorAccent">@color/accent</item>
         <item name="colorPrimaryDark">@color/drkgry</item>
-        <item name="android:statusBarColor">@color/drkgry</item>
+        <item name="android:actionMenuTextAppearance">@style/navText</item>
     </style>
 
-    <style name="TabTextSide" parent="TextAppearance.Design.Tab">
+    <style name="TabTextSide" parent="ResonateTheme">
         <item name="android:textSize">16sp</item>
         <item name="android:fontFamily">monospace</item>
+    </style>
+
+    <style name="navText" parent = "ResonateTheme">
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:textColor">@color/blk</item>
     </style>
 </resources>

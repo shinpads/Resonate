@@ -11,11 +11,17 @@
         <item name="android:textColorPrimary">@color/blk</item>
         <item name="colorAccent">@color/accent</item>
         <item name="colorPrimaryDark">@color/drkgry</item>
+        <item name="android:text">@style/navText</item>
     </style>
 
-    <style name="TabTextSide" parent="TextAppearance.Design.Tab">
+    <style name="TabTextSide" parent="ResonateTheme">
         <item name="android:textSize">16sp</item>
         <item name="android:fontFamily">monospace</item>
+    </style>
+
+    <style name="navText" parent = "ResonateTheme">
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:textColor">@color/blk</item>
     </style>
 </resources>
 
