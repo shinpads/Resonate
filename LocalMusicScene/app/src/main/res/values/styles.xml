@@ -28,5 +28,6 @@
     <style name="ResonateTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="ResonateTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    
 </resources>
 
