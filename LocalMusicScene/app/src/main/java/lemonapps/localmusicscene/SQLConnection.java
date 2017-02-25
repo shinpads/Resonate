@@ -6,6 +6,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import java.io.UnsupportedEncodingException;
+import java.net.InetAddress;
 import java.security.*;
 
 import java.sql.*;
@@ -18,12 +19,12 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class SQLConnection {
     private Connection con;
-    private static final String ip = "184.146.24.232:1433";
+    public static  String ip = "";
     private static final String database = "master";
     private static final String username = "Java";
     private static final String password ="thesolohoarder@123";
     private static final String driverClass = "net.sourceforge.jtds.jdbc.Driver";
-    private static final String url = "jdbc:jtds:sqlserver://"+ip+"/"+database+";integratedSecurity=true";
+    public static  String url = "jdbc:jtds:sqlserver://"+ip+"/"+database+";integratedSecurity=true";
 
     public SQLConnection() {
         con = ConnectToDataBase();
@@ -35,6 +36,11 @@ public class SQLConnection {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         try {
+            //get ipaddress
+            InetAddress inetAddress = InetAddress.getByName("Resonate.redirectme.net");
+            ip = inetAddress.getHostAddress() + ":1433";
+            url = "jdbc:jtds:sqlserver://"+ip+"/"+database+";integratedSecurity=true";
+            //setup driver
             Class.forName(driverClass);
             conn = DriverManager.getConnection(url,username,password);
         }catch(Exception ex) {
@@ -56,7 +62,7 @@ public class SQLConnection {
             Statement statement = con.createStatement();
             ResultSet rs = statement.executeQuery(query);
             if(rs.next()){
-                con.close(); //close connection to sql server
+                //con.close(); //close connection to sql server
                 return true;
             }
         }catch (Exception ex){
@@ -82,6 +88,18 @@ public class SQLConnection {
             Log.e("SQL-ADD",ex.getLocalizedMessage());
         }
 
+        return false;
+    }
+    public boolean changeAccountPassword(String email, String newpassword){
+        newpassword = hashPassword(newpassword,email,getSalt(email));
+        String update = "UPDATE Signup SET Client_Password = '" +newpassword + "' WHERE Client_Email = '"+email+"';";
+        try{
+            Statement statement = con.createStatement();
+            statement.executeUpdate(update);
+            return true;
+        }catch(Exception ex){
+            Log.e("CHANGE PASSWORD ERROR",ex.getMessage());
+        }
         return false;
     }
     public String getSalt(String email){
@@ -142,7 +160,7 @@ public class SQLConnection {
 
      */
     public boolean saveBandInfo(String name, String newName,String genere, String bio, String location){
-        String update = "";
+        String update;
         try {
             Statement statement = con.createStatement();
             if (checkBandInDB(name)) {
@@ -172,6 +190,13 @@ public class SQLConnection {
             Log.e("BANDINDBSQL", ex.getLocalizedMessage());
         }
         return false;
+    }
+    public void closeConnection(){
+        try {
+            con.close();
+        }catch (Exception ex){
+            Log.e("SQLCLOSE ERROR",ex.getMessage());
+        }
     }
 
 }

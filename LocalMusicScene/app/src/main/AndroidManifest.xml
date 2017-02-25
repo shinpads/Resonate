@@ -3,36 +3,49 @@
     package="lemonapps.localmusicscene">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/loginTheme">
+        android:theme="@style/ResonateTheme">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyD2s-AD98g1GZf54JB4td70QIP52qYxmu8"/>
         <activity
             android:name=".Register"
-
-            android:screenOrientation="portrait"
-            android:theme="@style/loginTheme" />
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Login"
             android:exported="true"
             android:screenOrientation="portrait"
-            android:theme="@style/loginTheme" />
+            android:theme="@style/ResonateTheme">
 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
         <activity
             android:name=".HomePage"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ForgotPassword"
-            android:screenOrientation="portrait"
-            android:theme="@style/loginTheme" />
+            android:screenOrientation="portrait"/>
         <activity android:name=".ChangePasswords"
             android:screenOrientation="portrait"/>
         <activity android:name=".ManageBand"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/ResonateTheme" />
 
+
+        <activity android:name=".ForgotPasswordCode" />
+        <activity android:name=".ForgotPaswordChangePassword"></activity>
     </application>
 
 </manifest>

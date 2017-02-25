@@ -1,7 +1,7 @@
 package lemonapps.localmusicscene;
 
 /**
- * Created by Rob on 1/15/2017.
+ * Created by Rob and Steve Andre Arias on 1/15/2017.
  */
 
 import java.math.BigInteger;

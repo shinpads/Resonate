@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">Local Music Scene</string>
+    <string name="app_name">Resonate</string>
     <string name="testString">Local Music Scene</string>
     <string name="loginEmail">Email Address</string>
     <string name="loginPass">Password</string>
-    <string name="loginNoPass">forgot your password?</string>
-    <string name="loginNoAcc">Don\'t have an account?</string>
+    <string name="loginNoPass">can\'t remember your password?</string>
+    <string name="loginNoAcc">don\'t have an account?</string>
     <string name="loginDesc">Login</string>
     <string name="logoDesc">Logo</string>
     <string name="title_activity_login">Login</string>
@@ -14,9 +14,9 @@
     <string name="signUpLname">Last Name</string>
     <string name="signUpChekPass">Confirm Password</string>
     <string name="signUpDesc">Sign Up</string>
-    <string name="forgotSendDesc">Enter</string>
-    <string name="forgotText">Please enter your email address so we can help recover your password</string>
-    <string name="confirmForgot">We just sent you an email!\n Please enter your\n \"Reset Code\"\n found in the email</string>
+    <string name="forgotSendDesc">Send</string>
+    <string name="forgotText">What\'s your email address?</string>
+    <string name="confirmForgot">Please enter the reset code we sent you</string>
     <string name="resetCode">Reset Code</string>
     <string name="resetDesc">Reset Password</string>
     <string name="resetChangePass">Change Password</string>
@@ -29,6 +29,16 @@
     <string name="manageHometown">Hometown</string>
     <string name="buttonSave">Save</string>
     <string name="taxBarLocation">mississauga,on</string>
+    <string name="feed">Shows</string>
+    <string name="forum">Forum</string>
+    <string name="bands">Bands</string>
+    <string name="home">Home</string>
+    <string name="savedEvents">Saved Events</string>
+    <string name="favBands">Favourite Bands</string>
+    <string name="manBands">Manage Band</string>
+    <string name="notifs">Notifications</string>
+    <string name="fname">David</string>
+    <string name="lname">MacLean</string>
 
     <string-array name="genre_array">
         <item>Alternative</item>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/home"/>
+    <item android:title="@string/savedEvents" />
+    <item android:title="@string/favBands" />
+    <item android:title="@string/manBands"/>
+    <item android:title="@string/notifs" />
+</menu>

@@ -3,38 +3,47 @@ package lemonapps.localmusicscene;
 /**
  * Created by Rob on 1/14/2017.
  */
+import android.app.Activity;
 import android.util.Log;
+import android.widget.Toast;
+
 import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
 
-public class EmailSend {
-    public static boolean SendEmail(String to, String subject, String message){
-        Properties properties = new Properties();
-        properties.put("mail.smtp.host","smpt.gmail.com");
-        properties.put("mail.smtp.socketFactory.port","465");
-        properties.put("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory");
-        properties.put("mail.smtp.auth","true");
-        properties.put("mail.smtp.port","465");
+public class EmailSend extends Activity {
 
-        Session session = Session.getDefaultInstance(properties);
-        new javax.mail.Authenticator(){
-            protected PasswordAuthentication getPasswordAuth(){
-                return new PasswordAuthentication("localmusicsceneconfirm@gmail.com","thesolohoarder@123");
-            }
-        };
+    public static boolean sendEmail(String to, String subject, String text) {
 
-        try{
-            MimeMessage msg = new MimeMessage(session);
-            msg.setFrom(new InternetAddress("localmusicsceneconfirm@gmail.com"));
-            msg.addRecipient(Message.RecipientType.TO,new InternetAddress(to));
-            msg.setSubject(subject);
-            msg.setText(message);
-            Transport.send(msg);
+                Properties props = new Properties();
+                props.put("mail.smtp.host", "smtp.gmail.com");
+                props.put("mail.smtp.socketFactory.port", "465");
+                props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+                props.put("mail.smtp.auth", "true");
+                props.put("mail.smtp.port", "465");
 
-        }catch (Exception ex){
-            Log.e("EMAILSEND",ex.getLocalizedMessage());
-        }
+                Session session = Session.getDefaultInstance(props, new javax.mail.Authenticator() {
+                    protected PasswordAuthentication getPasswordAuthentication() {
+
+                        return new PasswordAuthentication("localmusicsceneconfrimation@gmail.com", "thesolohoarder@123");
+                    }
+                });
+
+                try {
+                    Message message = new MimeMessage(session);
+                    message.setFrom(new InternetAddress("localmusicsceneconfirmation@gmail.com"));
+                    message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
+                    message.setSubject(subject);
+                    message.setContent(text, "text/html; charset=utf-8");
+                    Transport.send(message);
+                    return true;
+
+                } catch (Exception e) {
+                    String error = (e.getLocalizedMessage() == null)?"error message null":e.getLocalizedMessage();
+                   Log.e("ERROR",error);
+                }
         return false;
     }
+
+
 }
