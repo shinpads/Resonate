@@ -38,3 +38,9 @@ captures/
 
 # Keystore files
 *.jks
+LocalMusicScene/app/src/main/java/lemonapps/localmusicscene/HomePage.java
+*.java
+LocalMusicScene/app/src/main/res/layout/activity_home_page.xml
+LocalMusicScene/app/src/main/res/layout/nav_drawer.xml
+LocalMusicScene/app/src/main/res/layout/activity_home_page.xml
+LocalMusicScene/app/src/main/res/layout/activity_home_page.xml
