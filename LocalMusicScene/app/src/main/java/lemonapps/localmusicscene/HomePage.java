@@ -13,7 +13,7 @@ public class HomePage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_page);
+        setContentView(R.layout.nav_drawer);
         changeLocationBtn = (TextView) findViewById(R.id.taxbarLocationText);
         changeLocationBtn.setOnClickListener(new View.OnClickListener() {
             @Override

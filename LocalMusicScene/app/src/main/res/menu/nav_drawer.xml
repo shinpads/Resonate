@@ -2,15 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:title="@string/home"
-        android:icon="@drawable/houseDark"/>
+        android:icon="@drawable/housedark"/>
     <item android:title="@string/savedEvents"
-        android:icon="@drawable/savEvents"/>
+        android:icon="@drawable/savevents"/>
     <item android:title="@string/favBands"
-        android:icon="@drawable/favBands"/>
+        android:icon="@drawable/favbands"/>
     <item android:title="@string/manBands"
-        android:icon="@drawable/manBands"/>
+        android:icon="@drawable/manbands"/>
     <item android:title="@string/notifs"
         android:icon="@drawable/notif"/>
     <item android:title="@string/logout"
-        android:icon="@drawable/logOut"/>
+        android:icon="@drawable/logout"/>
 </menu>
