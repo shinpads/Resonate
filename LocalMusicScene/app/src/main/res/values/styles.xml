@@ -13,6 +13,8 @@
         <item name="colorPrimaryDark">@color/drkgry</item>
         <item name="android:text">@style/navText</item>
         <item name="android:activatedBackgroundIndicator">@drawable/drawer_list_selector</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
     </style>
 
     <style name="TabTextSide" parent="ResonateTheme">
@@ -23,6 +25,10 @@
     <style name="navText" parent="ResonateTheme">
         <item name="android:fontFamily">monospace</item>
         <item name="android:textColor">@color/blk</item>
+    </style>
+    
+    <style name="splashTheme" parent="ResonateTheme">
+        <item name="android:windowBackground">@drawable/splash</item>
     </style>
 
     <style name="ResonateTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
