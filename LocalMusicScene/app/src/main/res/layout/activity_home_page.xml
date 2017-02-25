@@ -17,24 +17,163 @@
         android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        card_view:cardCornerRadius="10dp"
-        android:layout_margin="15dp"
+        card_view:cardCornerRadius="5dp"
+        android:layout_margin="10dp"
         android:elevation="2dp"
         card_view:cardBackgroundColor="@color/drkgry">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="3dp">
+            android:layout_margin="3dp"
+            android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Jan 14"
-                android:textColor="@color/ltegry"
-                android:textSize="15dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jan 14"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/ltegry"
+                    android:textSize="26sp"
+                    android:layout_gravity="start"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/stevelogo"/>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/cardTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Masks Off"
+                    android:textColor="@color/ltegry"
+                    android:textSize="24sp"
+                    android:fontFamily="monospace"
+                    android:layout_alignParentTop="true"
+                    android:gravity="center_horizontal"/>
+
+                <TextView
+                    android:id="@+id/cardBandName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Perivale"
+                    android:textColor="@color/ltegry"
+                    android:textSize="16sp"
+                    android:fontFamily="monospace"
+                    android:layout_below="@+id/cardTitle"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:textStyle="italic"/>
+
+                <ImageView
+                    android:id="@+id/cardClockIcon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/clock"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_below="@+id/cardBandName"/>
+
+                <TextView
+                    android:id="@+id/cardTimeText"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:text="7:00pm"
+                    android:textColor="@color/ltegry"
+                    android:fontFamily="monospace"
+                    android:layout_toRightOf="@id/cardClockIcon"
+                    android:layout_toEndOf="@id/cardClockIcon"
+                    android:layout_below="@id/cardBandName"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:textSize="15sp"
+                    android:gravity="center_vertical"/>
+
+                <ImageView
+                    android:id="@+id/cardHouseIcon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/house"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_below="@+id/cardClockIcon"/>
+
+                <TextView
+                    android:id="@+id/cardVenueText"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:text="The Rockpile"
+                    android:textColor="@color/ltegry"
+                    android:fontFamily="monospace"
+                    android:layout_toRightOf="@id/cardClockIcon"
+                    android:layout_toEndOf="@id/cardClockIcon"
+                    android:layout_below="@id/cardTimeText"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:textSize="15sp"
+                    android:gravity="center_vertical"/>
+
+                <ImageView
+                    android:id="@+id/cardMoneyIcon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/money"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_below="@id/cardHouseIcon"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:text="Free"
+                    android:textColor="@color/ltegry"
+                    android:fontFamily="monospace"
+                    android:layout_toRightOf="@id/cardClockIcon"
+                    android:layout_toEndOf="@id/cardClockIcon"
+                    android:layout_below="@id/cardVenueText"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:textSize="15sp"
+                    android:gravity="center_vertical"/>
+
+
+
+            </RelativeLayout>
 
         </LinearLayout>
+
     </android.support.v7.widget.CardView>
 
 </LinearLayout>
