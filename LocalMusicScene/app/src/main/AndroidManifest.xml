@@ -41,7 +41,9 @@
             android:theme="@style/ResonateTheme" />
         <activity android:name=".ForgotPasswordCode" />
         <activity android:name=".ForgotPaswordChangePassword" />
-        <activity android:name=".Splash">
+        <activity android:name=".Splash"
+            android:theme="@style/splashTheme">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

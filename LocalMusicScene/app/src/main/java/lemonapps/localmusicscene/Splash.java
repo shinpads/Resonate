@@ -9,9 +9,8 @@ public class Splash extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.splash);
-        Intent i = new Intent(Spash.this,Login.class);
-        finish();
+        Intent i = new Intent(this,Login.class);
         startActivity(i);
+        finish();
     }
 }
