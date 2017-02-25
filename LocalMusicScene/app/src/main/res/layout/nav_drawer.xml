@@ -10,8 +10,9 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
-    <include layout="@layout/activity_home_page"/>
 
+    <include layout="@layout/activity_home_page"/>
+    
 
     <android.support.design.widget.NavigationView
         app:itemTextAppearance="@style/navText"
@@ -23,9 +24,6 @@
         app:headerLayout="@layout/nav_drawer_header"
         app:menu="@menu/nav_drawer"/>
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/doublebar"/>
+
 
 </android.support.v4.widget.DrawerLayout>
