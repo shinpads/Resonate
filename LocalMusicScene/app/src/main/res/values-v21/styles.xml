@@ -11,7 +11,11 @@
         <item name="android:textColorPrimary">@color/blk</item>
         <item name="colorAccent">@color/accent</item>
         <item name="colorPrimaryDark">@color/drkgry</item>
-        <item name="android:actionMenuTextAppearance">@style/navText</item>
+        <item name="android:text">@style/navText</item>
+        <item name="android:activatedBackgroundIndicator">@drawable/drawer_list_selector</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:statusBarColor">@color/blk</item>
     </style>
 
@@ -24,4 +28,9 @@
         <item name="android:fontFamily">monospace</item>
         <item name="android:textColor">@color/blk</item>
     </style>
+
+    <style name="ResonateTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="ResonateTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
+
