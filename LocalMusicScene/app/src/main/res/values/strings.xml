@@ -39,6 +39,7 @@
     <string name="notifs">Notifications</string>
     <string name="fname">David</string>
     <string name="lname">MacLean</string>
+    <string name="logout">Log Out</string>
 
     <string-array name="genre_array">
         <item>Alternative</item>
