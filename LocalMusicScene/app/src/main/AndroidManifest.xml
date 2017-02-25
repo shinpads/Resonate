@@ -25,11 +25,6 @@
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/ResonateTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".HomePage"
@@ -46,6 +41,12 @@
             android:theme="@style/ResonateTheme" />
         <activity android:name=".ForgotPasswordCode" />
         <activity android:name=".ForgotPaswordChangePassword" />
+        <activity android:name=".Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
