@@ -4,7 +4,6 @@
     <item android:title="@string/home"/>
     <item android:title="@string/savedEvents" />
     <item android:title="@string/favBands" />
-    <item android:title="@string/manBands"
-        android:icon="@drawable/doublebar"/>
+    <item android:title="@string/manBands"/>
     <item android:title="@string/notifs" />
 </menu>

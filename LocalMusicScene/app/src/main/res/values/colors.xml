@@ -2,10 +2,9 @@
 <resources>
     <color name="blk">#000000</color>
     <color name="wht">#ffffff</color>
-    <color name="drkgry">#e71c1d26</color>
+    <color name="drkgry">#202020</color>
     <color name="ltegry">#cccccc</color>
     <color name="accent">#8200ff</color>
     <color name="medgry">#c7898989</color>
     <color name="nosel">#54ffffff</color>
-    <color name="navdrwr">#544b4b4b</color>
 </resources>

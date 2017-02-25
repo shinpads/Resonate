@@ -12,6 +12,7 @@
         <item name="colorAccent">@color/accent</item>
         <item name="colorPrimaryDark">@color/drkgry</item>
         <item name="android:actionMenuTextAppearance">@style/navText</item>
+        <item name="android:statusBarColor">@color/blk</item>
     </style>
 
     <style name="TabTextSide" parent="ResonateTheme">
