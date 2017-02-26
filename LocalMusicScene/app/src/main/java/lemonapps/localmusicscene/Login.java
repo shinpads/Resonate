@@ -68,6 +68,7 @@ public class Login extends AppCompatActivity {
             saveLogged();
             Intent i = new Intent(this,HomePage.class);
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            Global.email = email;
             startActivity(i);
             finish();
         }else{

@@ -49,6 +49,11 @@ public class SQLConnection {
         return conn;
     }
 
+    /*
+        INDIVIDUAL USER STUFF
+
+     */
+
     public  boolean CheckLogin(String email, String pass) {
         //check if email or password is empty
         if(email.trim().equals("") || pass.trim().equals("")){
@@ -137,6 +142,20 @@ public class SQLConnection {
             Log.e("SQL CHECK EMAIL",ex.getLocalizedMessage());
         }
         return false;
+    }
+    public  String getName(String email){
+        String query = "SELECT Client_FName,Client_LName FROM Signup WHERE Client_Email = '"+email+"'";
+
+        try{
+            Statement statement = con.createStatement();
+            ResultSet rs = statement.executeQuery(query);
+            if(rs.next()){
+                return rs.getString(1) +" "+ rs.getString(2);
+            }
+        }catch (Exception ex){
+            Log.e("SQL GET NAME", ex.getMessage());
+        }
+        return "Null";
     }
     public  String hashPassword(String password,String email ,String salt){
         String pepper = "XA DX GG XG XX XF FX AD FG XD GG DG GG";

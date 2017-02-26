@@ -19,18 +19,7 @@
         android:fontFamily="monospace"
         android:id="@+id/navFname"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text= "@string/lname"
-        android:layout_toRightOf="@id/navFname"
-        android:layout_toEndOf="@id/navFname"
-        android:textSize="18sp"
-        android:layout_centerVertical="true"
-        android:textColor="@color/ltegry"
-        android:fontFamily="monospace"
-        android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp"/>
+
 
     <ImageButton
         android:background="@android:color/transparent"
