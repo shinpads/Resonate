@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
@@ -36,7 +38,53 @@ public class HomePage extends AppCompatActivity {
         RelativeLayout navHeaderLayout = (RelativeLayout)navigationView.getHeaderView(0);
         TextView navDrawerUserName = (TextView)navHeaderLayout.getChildAt(0);
         navDrawerUserName.setText(con.getName(Global.email));
-
+        Menu navMen = navigationView.getMenu();
+        //HOME
+        navMen.getItem(0).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                return false;
+            }
+        });
+        //SAVED EVENTS
+        navMen.getItem(1).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                return false;
+            }
+        });
+        //FAVOURITE BANDS
+        navMen.getItem(2).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                return false;
+            }
+        });
+        //MANAGE BAND
+        navMen.getItem(3).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                return false;
+            }
+        });
+        //NOTIFICATIONS
+        navMen.getItem(4).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                return false;
+            }
+        });
+        //LOGOUT
+        navMen.getItem(5).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                Intent i = new Intent(HomePage.this,Login.class);
+                Toast.makeText(getApplicationContext(),"Logged Out",Toast.LENGTH_SHORT).show();
+                startActivity(i);
+                finish();
+                return false;
+            }
+        });
         sideBarLines = (ImageButton)findViewById(R.id.sidebarLines);
         sideBarLines.setOnClickListener(new View.OnClickListener() {
             @Override
