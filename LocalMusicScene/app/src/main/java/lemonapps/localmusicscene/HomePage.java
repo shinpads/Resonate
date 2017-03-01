@@ -1,6 +1,8 @@
 package lemonapps.localmusicscene;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -80,6 +82,8 @@ public class HomePage extends AppCompatActivity {
             public boolean onMenuItemClick(MenuItem item) {
                 Intent i = new Intent(HomePage.this,Login.class);
                 Toast.makeText(getApplicationContext(),"Logged Out",Toast.LENGTH_SHORT).show();
+                SharedPreferences sharedPreferences = HomePage.this.getSharedPreferences("com.masonjar.app", Context.MODE_PRIVATE);
+                sharedPreferences.edit().putBoolean("logged",false).apply();
                 startActivity(i);
                 finish();
                 return false;

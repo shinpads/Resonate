@@ -1,5 +1,6 @@
 package lemonapps.localmusicscene;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
@@ -45,10 +46,7 @@ public class Login extends AppCompatActivity {
         forgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {ForgotPasswordActivity();} });
-       /* if(checkIfLoggedIn()){
-            //GO TO HOME PAGE
-            Toast.makeText(getApplicationContext(),"Already Logged In",Toast.LENGTH_SHORT).show();
-        }*/
+        checkIfLoggedIn();
 
     }
     private void ForgotPasswordActivity(){
@@ -75,14 +73,18 @@ public class Login extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), R.string.loginInvalid, Toast.LENGTH_SHORT).show();
         }
     }
-    private boolean checkIfLoggedIn(){
-        SharedPreferences preferences = getSharedPreferences("pref",MODE_PRIVATE);
-        return preferences.getBoolean("logged",false);
+    private void checkIfLoggedIn(){
+        SharedPreferences sharedPreferences = this.getSharedPreferences("com.masonjar.app",Context.MODE_PRIVATE);
+        if(sharedPreferences.getBoolean("logged",false)){
+            Intent i = new Intent(Login.this,HomePage.class);
+            startActivity(i);
+            finish();
+        }
     }
     private void saveLogged(){
-        SharedPreferences.Editor editor = getSharedPreferences("pref",MODE_PRIVATE).edit();
-        editor.putBoolean("logged",true);
-        editor.apply();
+        SharedPreferences sharedPreferences = this.getSharedPreferences("com.masonjar.app",Context.MODE_PRIVATE);
+        sharedPreferences.edit().putBoolean("logged",true).apply();
+
     }
 
 }
