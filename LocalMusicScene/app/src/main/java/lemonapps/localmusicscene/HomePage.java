@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.provider.ContactsContract;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -40,6 +41,15 @@ public class HomePage extends AppCompatActivity {
         con = new SQLConnection();
         NavigationView navigationView = (NavigationView)findViewById(R.id.navDrawer);
         RelativeLayout navHeaderLayout = (RelativeLayout)navigationView.getHeaderView(0);
+        ImageButton profileButton = (ImageButton) navigationView.getHeaderView(1);
+
+        profileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomePage.this, Profile.class);
+                startActivity(i);
+            }
+        });
         TextView navDrawerUserName = (TextView)navHeaderLayout.getChildAt(0);
         navDrawerUserName.setText(con.getName(Global.email));
         Menu navMen = navigationView.getMenu();
@@ -128,18 +138,6 @@ public class HomePage extends AppCompatActivity {
         //super.onActivityResult(requestCode,resultCode,data);
     }
 
-    ImageButton profilePicture = (ImageButton) findViewById(R.id.profile_image_button);
-
-    profilePicture.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            // Create a new intent to open the FamilyMembersActivity
-            Intent familyIntent = new Intent(MainActivity.this, FamilyMembersActivity.class);
-
-            // Start the new activity
-            startActivity(familyIntent);
-        }
-    });
 
 
 
