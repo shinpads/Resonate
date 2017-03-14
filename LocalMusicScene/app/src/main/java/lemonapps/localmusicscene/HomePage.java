@@ -99,7 +99,11 @@ public class HomePage extends AppCompatActivity {
         navMen.getItem(3).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
+                Intent i = new Intent(new Intent(HomePage.this, ManageBand.class));
+                startActivity(i);
                 return false;
+
+
             }
         });
         //NOTIFICATIONS
