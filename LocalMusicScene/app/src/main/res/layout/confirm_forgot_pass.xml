@@ -27,7 +27,6 @@
 
 
         <EditText
-            android:text=""
             android:id="@+id/resetCode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
