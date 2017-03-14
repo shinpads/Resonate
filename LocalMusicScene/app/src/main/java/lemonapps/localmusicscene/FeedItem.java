@@ -14,4 +14,8 @@ public class FeedItem {
     public String location;
     public String cost;
     public String desc;
+
+    public FeedItem(String a) {
+        this.title = a;
+    }
 }

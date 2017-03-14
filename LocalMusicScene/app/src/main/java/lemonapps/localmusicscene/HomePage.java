@@ -8,6 +8,8 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
@@ -24,18 +26,34 @@ import com.google.android.gms.location.places.ui.PlaceAutocomplete;
 
 import org.w3c.dom.Text;
 
+import java.util.*;
+
 public class HomePage extends AppCompatActivity {
     TextView locationTxt;
     ImageButton sideBarLines;
     static final int placeAutoCompleteReqestCode = 1;
     String location;
     DrawerLayout navDrawer;
-    SQLConnection con;
+    private SQLConnection con;
+    private List<FeedItem> feedslist;
+
+
+    private RecyclerView recyclerView;
+    private FeedAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nav_drawer);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        feedslist = new ArrayList<>();
+        for(int i = 0; i < 200; i ++) {
+            feedslist.add(new FeedItem("test one two"));
+        }
+        adapter = new FeedAdapter(getApplicationContext(),feedslist);
+        recyclerView.setAdapter(adapter);
         navDrawer = (DrawerLayout)findViewById(R.id.drawer_layout);
+
         con = new SQLConnection();
         NavigationView navigationView = (NavigationView)findViewById(R.id.navDrawer);
         RelativeLayout navHeaderLayout = (RelativeLayout)navigationView.getHeaderView(0);
