@@ -10,7 +10,12 @@
     android:orientation="vertical">
 
     <include layout="@layout/toolbar"/>
-
+    <!--
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvHomePage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+        -->
 
 
     <android.support.v7.widget.CardView
@@ -35,6 +40,7 @@
                 android:layout_weight="2">
 
                 <TextView
+                    android:id="@+id/cardDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Jan 14"
@@ -45,6 +51,7 @@
                     android:fontFamily="monospace"/>
 
                 <ImageView
+                    android:id="@+id/cardPicture"
                     android:layout_width="match_parent"
                     android:layout_height="125dp"
                     android:src="@drawable/stevelogo"/>
@@ -153,6 +160,7 @@
                     android:layout_below="@id/cardHouseIcon"/>
 
                 <TextView
+                    android:id="@+id/cardCost"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:text="Free"
@@ -168,6 +176,7 @@
                     android:gravity="center_vertical"/>
 
                 <TextView
+                    android:id="@+id/cardDesc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="After a named change from False Face Society the band has been reincarnate..."
