@@ -89,7 +89,6 @@ public class Login extends AppCompatActivity {
         SharedPreferences sharedPreferences = this.getSharedPreferences("com.masonjar.app",Context.MODE_PRIVATE);
         sharedPreferences.edit().putBoolean("logged",true).apply();
         sharedPreferences.edit().putString("email", emailTxt.getText().toString()).apply();
-
     }
 
 
