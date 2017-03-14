@@ -11,7 +11,6 @@
         android:inputType="textPassword"
         android:hint="@string/oldPass"
         android:padding="25dp"
-        android:text=""
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
         android:elevation="5dp"/>
@@ -24,7 +23,6 @@
         android:inputType="textPassword"
         android:hint="@string/newPass"
         android:padding="25dp"
-        android:text=""
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
         android:elevation="5dp"/>
@@ -36,7 +34,6 @@
         android:id="@+id/ChgPassNewConfirm"
         android:inputType="textPassword"
         android:hint="@string/newPassConfirm"
-        android:text=""
         android:padding="25dp"
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"

@@ -4,6 +4,7 @@ package lemonapps.localmusicscene;
  * Created by Rob on 1/14/2017.
  */
 import android.app.Activity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -11,7 +12,7 @@ import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
 
-public class EmailSend extends Activity {
+public class EmailSend extends AppCompatActivity {
 
     public static boolean sendEmail(String to, String subject, String text) {
 

@@ -28,7 +28,7 @@
     <string name="Bio">Bio</string>
     <string name="manageHometown">Hometown</string>
     <string name="buttonSave">Save</string>
-    <string name="taxBarLocation">tap to set location</string>
+    <string name="taxBarLocation">mississauga,on</string>
     <string name="feed">Shows</string>
     <string name="forum">Forum</string>
     <string name="bands">Bands</string>
@@ -40,10 +40,6 @@
     <string name="fname">David</string>
     <string name="lname">MacLean</string>
     <string name="logout">Log Out</string>
-    <string name="myProfile">My Profile</string>
-    <string name="firstName">First Name</string>
-    <string name="lastName">Last Name</string>
-    <string name="update">Update</string>
 
     <string-array name="genre_array">
         <item>Alternative</item>

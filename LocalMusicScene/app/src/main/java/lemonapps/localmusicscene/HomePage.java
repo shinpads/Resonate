@@ -1,5 +1,6 @@
 package lemonapps.localmusicscene;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -125,6 +126,8 @@ public class HomePage extends AppCompatActivity {
         }
         //super.onActivityResult(requestCode,resultCode,data);
     }
+
+    
 
 
 }
