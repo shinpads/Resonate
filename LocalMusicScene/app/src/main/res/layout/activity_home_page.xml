@@ -179,14 +179,14 @@
                     android:id="@+id/cardDesc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="If this goes into a dot dot dot then I'm a God"
+                    android:text="If this goes into a dot dot dot on the second line I would say that I most certainly am a God"
                     android:layout_below="@id/cardMoneyIcon"
                     android:textColor="@color/medgry"
                     android:layout_marginTop="7dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginStart="5dp"
                     android:textStyle="italic"
-                    android:maxLines="1"
+                    android:maxLines="2"
                     android:ellipsize="end"
                     android:scrollHorizontally="true"/>
 
