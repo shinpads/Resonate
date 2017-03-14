@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class ManageBand extends AppCompatActivity {
@@ -24,7 +25,7 @@ public class ManageBand extends AppCompatActivity {
         nameTxt = (EditText)findViewById(R.id.manageBandName);
         genereSpin = (Spinner) findViewById(R.id.manageBandGenreSpinner);
         bioTxt = (EditText) findViewById(R.id.manageBandBio);
-        locationTxt = (EditText) findViewById(R.id.manageBandHomeTown);
+        //locationTxt = (EditText) findViewById(R.id.manageBandHomeTown);
         saveButton = (Button)findViewById(R.id.saveBandInfoButton);
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
