@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -126,6 +127,21 @@ public class HomePage extends AppCompatActivity {
         }
         //super.onActivityResult(requestCode,resultCode,data);
     }
+
+    ImageButton profilePicture = (ImageButton) findViewById(R.id.profile_image_button);
+
+    profilePicture.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            // Create a new intent to open the FamilyMembersActivity
+            Intent familyIntent = new Intent(MainActivity.this, FamilyMembersActivity.class);
+
+            // Start the new activity
+            startActivity(familyIntent);
+        }
+    });
+
+
 
     
 
