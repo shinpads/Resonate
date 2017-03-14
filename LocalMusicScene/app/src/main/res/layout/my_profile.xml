@@ -11,8 +11,8 @@
         android:text="@string/firstName"
         android:fontFamily="monospace"
         android:textColor="@color/drkgry"
-        android:padding="15dp"
-        android:layout_marginTop="35dp"
+        android:padding="10dp"
+        android:layout_marginTop="15dp"
         android:textSize="22sp"
         android:layout_gravity="center_horizontal"/>
 
@@ -30,9 +30,9 @@
         android:text="@string/lastName"
         android:fontFamily="monospace"
         android:textColor="@color/drkgry"
-        android:padding="15dp"
+        android:padding="10dp"
         android:textSize="22sp"
-        android:layout_marginTop="25dp"/>
+        android:layout_marginTop="5dp"/>
 
     <EditText
         android:id="@+id/profLNameField"
@@ -48,34 +48,54 @@
         android:text="@string/loginEmail"
         android:fontFamily="monospace"
         android:textColor="@color/drkgry"
-        android:padding="15dp"
+        android:padding="10dp"
         android:id="@+id/textView"
         android:textSize="22sp"
-        android:layout_marginTop="25dp"/>
+        android:layout_marginTop="5dp"/>
 
     <EditText
         android:id="@+id/signUpEmailField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
-        android:text="yo"
+        android:text="david.41hz@gmail.com"
         android:layout_marginLeft="15dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp">
 
     <Button
         android:contentDescription="@string/signUpDesc"
         android:id="@+id/profUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginRight="105dp"
-        android:layout_marginLeft="105dp"
         android:background="@drawable/login_button"
         android:text="@string/update"
         android:textColor="@color/wht"
         android:textSize="18sp"
         android:clickable="true"
         android:fontFamily="monospace"
-        android:elevation="2dp"/>
+        android:elevation="2dp"
+        android:layout_weight="1"
+        android:layout_margin="10dp"/>
+
+    <Button
+        android:contentDescription="@string/signUpDesc"
+        android:id="@+id/profchkpass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/login_button"
+        android:text="@string/resetChangePass"
+        android:textColor="@color/wht"
+        android:textSize="18sp"
+        android:clickable="true"
+        android:fontFamily="monospace"
+        android:elevation="2dp"
+        android:layout_weight="1"
+        android:layout_margin="10dp"/>
+
+    </LinearLayout>
 
 </LinearLayout>
