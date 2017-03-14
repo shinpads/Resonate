@@ -22,6 +22,7 @@
                 android:inputType="textCapWords"
                 android:hint="@string/signUpFname"
                 android:padding="25dp"
+                android:text=""
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="35dp"
                 android:layout_marginRight="35dp"/>
@@ -31,6 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textCapWords"
+                android:text=""
                 android:hint="@string/signUpLname"
                 android:padding="25dp"
                 android:layout_below="@+id/signUpFnameField"
@@ -42,6 +44,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
+                android:text=""
                 android:hint="@string/loginEmail"
                 android:padding="25dp"
                 android:layout_below="@+id/signUpLnameField"
@@ -56,6 +59,7 @@
                 android:hint="@string/loginPass"
                 android:padding="25dp"
                 android:layout_below="@+id/signUpEmailField"
+                android:text=""
                 android:layout_marginLeft="35dp"
                 android:layout_marginRight="35dp"/>
 
@@ -67,6 +71,7 @@
                 android:hint="@string/signUpChekPass"
                 android:padding="25dp"
                 android:layout_below="@+id/signUpPassField"
+                android:text=""
                 android:layout_marginLeft="35dp"
                 android:layout_marginRight="35dp"/>
 
