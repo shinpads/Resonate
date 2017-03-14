@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.Image;
 import android.provider.ContactsContract;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -41,7 +42,9 @@ public class HomePage extends AppCompatActivity {
         con = new SQLConnection();
         NavigationView navigationView = (NavigationView)findViewById(R.id.navDrawer);
         RelativeLayout navHeaderLayout = (RelativeLayout)navigationView.getHeaderView(0);
-        ImageButton profileButton = (ImageButton) navigationView.getHeaderView(1);
+        
+        TextView navDrawerUserName = (TextView)navHeaderLayout.getChildAt(0);
+        ImageButton profileButton = (ImageButton)navHeaderLayout.getChildAt(1);
 
         profileButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +53,7 @@ public class HomePage extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        TextView navDrawerUserName = (TextView)navHeaderLayout.getChildAt(0);
+
         navDrawerUserName.setText(con.getName(Global.email));
         Menu navMen = navigationView.getMenu();
         //HOME
@@ -135,7 +138,6 @@ public class HomePage extends AppCompatActivity {
                 locationTxt.setText(location);
             }
         }
-        //super.onActivityResult(requestCode,resultCode,data);
     }
 
 
