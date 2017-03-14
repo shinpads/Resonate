@@ -36,7 +36,8 @@
             android:padding="25dp"
             android:layout_marginLeft="35dp"
             android:layout_marginRight="35dp"
-            android:layout_below="@+id/resetText"/>
+            android:layout_below="@+id/resetText"
+            android:text=""/>
 
         <Button
             android:contentDescription="@string/resetDesc"
