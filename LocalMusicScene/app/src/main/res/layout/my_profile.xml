@@ -11,10 +11,10 @@
         android:text="@string/firstName"
         android:fontFamily="monospace"
         android:textColor="@color/drkgry"
-        android:padding="10dp"
-        android:layout_marginTop="15dp"
-        android:textSize="22sp"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:textSize="15sp"/>
 
     <EditText
         android:id="@+id/profFNameField"
@@ -30,9 +30,10 @@
         android:text="@string/lastName"
         android:fontFamily="monospace"
         android:textColor="@color/drkgry"
-        android:padding="10dp"
-        android:textSize="22sp"
-        android:layout_marginTop="5dp"/>
+        android:textSize="15sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"/>
 
     <EditText
         android:id="@+id/profLNameField"
@@ -48,10 +49,11 @@
         android:text="@string/loginEmail"
         android:fontFamily="monospace"
         android:textColor="@color/drkgry"
-        android:padding="10dp"
         android:id="@+id/textView"
-        android:textSize="22sp"
-        android:layout_marginTop="5dp"/>
+        android:textSize="15sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"/>
 
     <EditText
         android:id="@+id/signUpEmailField"
@@ -79,7 +81,8 @@
         android:fontFamily="monospace"
         android:elevation="2dp"
         android:layout_weight="1"
-        android:layout_margin="10dp"/>
+        android:layout_margin="10dp"
+        android:layout_gravity="center_vertical"/>
 
     <Button
         android:contentDescription="@string/signUpDesc"
@@ -94,7 +97,8 @@
         android:fontFamily="monospace"
         android:elevation="2dp"
         android:layout_weight="1"
-        android:layout_margin="10dp"/>
+        android:layout_margin="10dp"
+        android:layout_gravity="center_vertical"/>
 
     </LinearLayout>
 
