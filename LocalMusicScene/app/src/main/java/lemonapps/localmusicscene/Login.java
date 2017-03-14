@@ -15,6 +15,8 @@ import android.widget.Toast;
 
 import java.net.InetAddress;
 
+import static java.util.logging.Logger.global;
+
 public class Login extends AppCompatActivity {
     EditText emailTxt;
     EditText passwordTxt;
@@ -64,7 +66,7 @@ public class Login extends AppCompatActivity {
         String password = passwordTxt.getText().toString();
         if(sqlCon.CheckLogin(email,password)){
             //Go To home Page <------------
-            saveLogged();
+            saveInfo();
             Intent i = new Intent(this,HomePage.class);
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             Global.email = email;
@@ -79,13 +81,17 @@ public class Login extends AppCompatActivity {
         if(sharedPreferences.getBoolean("logged",false)){
             Intent i = new Intent(Login.this,HomePage.class);
             startActivity(i);
+            Global.email = sharedPreferences.getString("email", "yuoguyghgj");
             finish();
         }
     }
-    private void saveLogged(){
+    private void saveInfo(){
         SharedPreferences sharedPreferences = this.getSharedPreferences("com.masonjar.app",Context.MODE_PRIVATE);
         sharedPreferences.edit().putBoolean("logged",true).apply();
+        sharedPreferences.edit().putString("email", emailTxt.getText().toString()).apply();
 
     }
+
+
 
 }
