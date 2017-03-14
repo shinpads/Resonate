@@ -76,7 +76,7 @@
         android:fontFamily="monospace"
         android:textColor="@color/drkgry"
         android:textSize="15sp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"/>
 
@@ -96,7 +96,7 @@
         android:textColor="@color/drkgry"
         android:id="@+id/textView"
         android:textSize="15sp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"/>
 
@@ -121,12 +121,12 @@
         android:background="@drawable/login_button"
         android:text="@string/update"
         android:textColor="@color/wht"
-        android:textSize="18sp"
+        android:textSize="15sp"
         android:clickable="true"
         android:fontFamily="monospace"
         android:elevation="2dp"
         android:layout_weight="1"
-        android:layout_margin="10dp"
+        android:layout_margin="20dp"
         android:layout_gravity="center_vertical"/>
 
     <Button
@@ -137,12 +137,12 @@
         android:background="@drawable/login_button"
         android:text="@string/resetChangePass"
         android:textColor="@color/wht"
-        android:textSize="18sp"
+        android:textSize="15sp"
         android:clickable="true"
         android:fontFamily="monospace"
         android:elevation="2dp"
         android:layout_weight="1"
-        android:layout_margin="10dp"
+        android:layout_margin="20dp"
         android:layout_gravity="center_vertical"/>
 
     </LinearLayout>

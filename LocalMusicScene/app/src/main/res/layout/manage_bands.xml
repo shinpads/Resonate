@@ -32,7 +32,7 @@
                 android:id="@+id/profileText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/myProfile"
+                android:text="@string/manBands"
                 android:textSize="18sp"
                 android:textAllCaps="true"
                 android:fontFamily="monospace"
@@ -58,7 +58,7 @@
         android:hint="@string/bandName"
         android:elevation="5dp"
         android:text=""
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
         android:padding="10dp"/>
@@ -71,7 +71,7 @@
         android:entries="@array/genre_array"
         android:elevation="5dp"
         android:padding="10dp"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="20dp">
     </Spinner>
 
     <TextView
@@ -85,7 +85,8 @@
         android:layout_marginStart="10dp"
         android:clickable="true"
         android:textSize="17sp"
-        android:padding="10dp"/>
+        android:padding="10dp"
+        android:layout_marginTop="20dp"/>
 
 
     <EditText
@@ -93,12 +94,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/Bio"
-        android:inputType="textImeMultiLine"
+        android:inputType="textMultiLine"
         android:elevation="5dp"
+        android:maxLines="5"
         android:text=""
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
-        android:padding="10dp"/>
+        android:padding="10dp"
+        android:layout_marginTop="20dp"/>
 
 
     <Button
