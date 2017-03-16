@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.Image;
 import android.provider.ContactsContract;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -37,6 +38,7 @@ public class HomePage extends AppCompatActivity {
     static final int placeAutoCompleteReqestCode = 1;
     String location;
     DrawerLayout navDrawer;
+    FloatingActionButton fab;
     private SQLConnection con;
     private List<FeedItem> feedslist;
     private RecyclerView recyclerView;
@@ -48,6 +50,7 @@ public class HomePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nav_drawer);
+        fab = (FloatingActionButton)findViewById(R.id.fabPlus);
         con = new SQLConnection();
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -93,7 +96,12 @@ public class HomePage extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomePage.this,AddEvent.class));
+            }
+        });
         navDrawerUserName.setText(con.getName(Global.email));
         Menu navMen = navigationView.getMenu();
         //HOME
