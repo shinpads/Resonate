@@ -10,7 +10,9 @@ import java.net.InetAddress;
 import java.security.*;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Formatter;
+import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -210,6 +212,41 @@ public class SQLConnection {
         }
         return false;
     }
+    /*
+        HOME PAGE FEED STUFF
+
+     */
+    public List<FeedItem> fetchFeed(String location, int offset, int ammount){
+        String query = "";
+        FeedItem curFeedItem;
+        List<FeedItem> feedItems = new ArrayList<FeedItem>();
+        try{
+            Statement statement = con.createStatement();
+            ResultSet rs = statement.executeQuery(query);
+            while(rs.next()){
+                curFeedItem = new FeedItem();
+                curFeedItem.setArtist(rs.getString("Event_artist"));
+                curFeedItem.setCost(rs.getString("Event_cost"));
+                curFeedItem.setDate(rs.getString("Event_date"));
+                curFeedItem.setDesc(rs.getString("Event_desc"));
+                curFeedItem.setLocation(rs.getString("Event_location"));
+                curFeedItem.setTime(rs.getString("Event_time"));
+                curFeedItem.setTitle(rs.getString("Event_title"));
+                feedItems.add(curFeedItem);
+            }
+            return feedItems;
+        }catch(Exception ex){
+            Log.e("FETCH DATA",ex.getMessage());
+        }
+        return new ArrayList<>();
+    }
+
+
+
+    /*
+    GENERAL STUFF
+
+    */
     public void closeConnection(){
         try {
             con.close();

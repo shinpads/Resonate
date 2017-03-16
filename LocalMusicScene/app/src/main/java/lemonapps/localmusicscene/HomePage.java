@@ -39,31 +39,43 @@ public class HomePage extends AppCompatActivity {
     DrawerLayout navDrawer;
     private SQLConnection con;
     private List<FeedItem> feedslist;
-
-
     private RecyclerView recyclerView;
     private FeedAdapter adapter;
-    private int totalXScroll = 0;
+    LinearLayoutManager layoutManager;
+    private int pastVisiblesItems, visibleItemCount, totalItemCount;
+    private boolean loading = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nav_drawer);
+        con = new SQLConnection();
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         feedslist = new ArrayList<>();
         adapter = new FeedAdapter(getApplicationContext(),feedslist);
         recyclerView.setAdapter(adapter);
-
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener(){
             @Override
             public void onScrolled(RecyclerView rv, int dx, int dy){
                 super.onScrolled(rv,dx,dy);
-                totalXScroll += dy;
-                Log.i("Scroll",""+recyclerView.computeVerticalScrollOffset()+" "+recyclerView.computeVerticalScrollRange());
+                if (dy > 0){
+                    visibleItemCount = layoutManager.getChildCount();
+                    totalItemCount = layoutManager.getItemCount();
+                    pastVisiblesItems = layoutManager.findFirstVisibleItemPosition();
+                    if (loading == false){
+                        if((visibleItemCount + pastVisiblesItems) >= totalItemCount){
+                            loading = true;
+                            Toast.makeText(getApplicationContext(),"Load More",Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }
             }
         });
-        for(int i = 0; i < 10; i ++) {
-            feedslist.add(new FeedItem("test one two"));
+
+        for(FeedItem i : con.fetchFeed(location,0,10)) {
+            feedslist.add(i);
         }
         navDrawer = (DrawerLayout)findViewById(R.id.drawer_layout);
 
@@ -151,6 +163,7 @@ public class HomePage extends AppCompatActivity {
             }
         });
     }
+
     private void placesAutoComplete(){
 
         try {

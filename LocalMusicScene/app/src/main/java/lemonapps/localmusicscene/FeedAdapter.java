@@ -30,13 +30,13 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder>{
     @Override
     public void onBindViewHolder (ViewHolder viewHolder, int i){
         FeedItem feedItem = feedItemList.get(i);
-        viewHolder.artist.setText(feedItem.artist);
-        viewHolder.title.setText(feedItem.title);
-        viewHolder.date.setText(feedItem.date);
-        viewHolder.time.setText(feedItem.time);
-        viewHolder.location.setText(feedItem.location);
-        viewHolder.cost.setText(feedItem.cost);
-        viewHolder.desc.setText(feedItem.desc);
+        viewHolder.artist.setText(feedItem.getArtist());
+        viewHolder.title.setText(feedItem.getTitle());
+        viewHolder.date.setText(feedItem.getDate());
+        viewHolder.time.setText(feedItem.getTime());
+        viewHolder.location.setText(feedItem.getLocation());
+        viewHolder.cost.setText(feedItem.getCost());
+        viewHolder.desc.setText(feedItem.getDesc());
     }
     @Override
     public int getItemCount(){
