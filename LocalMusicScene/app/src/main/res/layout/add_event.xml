@@ -25,7 +25,14 @@
         android:inputType="time"
         android:text=""
         android:id="@+id/timeField"
-        android:hint="Show Name" />
+        android:hint="Time" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/dateField"
+        android:hint="Date" />
 
     <EditText
         android:layout_width="match_parent"
