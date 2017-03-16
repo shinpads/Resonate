@@ -217,7 +217,7 @@ public class SQLConnection {
 
      */
     public List<FeedItem> fetchFeed(String location, int offset, int ammount){
-        String query = "";
+        String query = "SELECT TOP 10 * FROM Eventz";
         FeedItem curFeedItem;
         List<FeedItem> feedItems = new ArrayList<FeedItem>();
         try{
@@ -241,7 +241,7 @@ public class SQLConnection {
         return new ArrayList<>();
     }
     public boolean saveEvent(String a,String b,String c,String d,String e,String f,String g){
-        String update = "INSERT INTO Event(Event_title,Event_artist,Event_date,Event_time,Event_location,Event_cost,Event_desc) VALUES('a','b','c','d','e','f','g')";
+        String update = "INSERT INTO Eventz(Event_title,Event_artist,Event_date,Event_time,Event_location,Event_cost,Event_desc,Event_ID) VALUES('a','b','c','d','e','f','g','1212')";
         try{
             Statement statement = con.createStatement();
             statement.executeUpdate(update);

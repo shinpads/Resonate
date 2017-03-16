@@ -17,173 +17,210 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="3dp"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="3dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/cardTitle"
+                android:text="Masks off: False Face Society is becoming Perivale the Band"
+                android:textColor="@color/wht"
+                android:textSize="18sp"
+                android:fontFamily="monospace"
+                android:gravity="center_horizontal"
+                android:maxLines="2" />
+
+
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_weight="2">
+                android:orientation="horizontal">
 
-                <!--<TextView
-                    android:id="@+id/cardDate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Jan 14"
-                    android:textColor="@color/wht"
-                    android:textSize="26sp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="5dp"
-                    android:fontFamily="monospace"/>-->
-
-                <ImageView
-                    android:id="@+id/cardPicture"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/stevelogo"/>
+                    android:orientation="vertical"
+                    android:layout_weight="6">
+
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/steve"
+                        android:layout_margin="5dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Perivale"
+                        android:textColor="@color/wht"
+                        android:textSize="15sp"/>
+
+                </LinearLayout>
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:layout_marginTop="5dp">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/cardDateIcon"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/date_icon"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_column="1"/>
+
+                        <TextView
+                            android:id="@+id/cardDateText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Wednesday, September 25th 2017"
+                            android:textColor="@color/ltegry"
+                            android:fontFamily="monospace"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginStart="5dp"
+                            android:textSize="12sp"
+                            android:gravity="center_vertical"
+                            android:layout_column="2"/>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/cardClockIcon"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/clock"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_column="1"/>
+
+                        <TextView
+                            android:id="@+id/cardTimeText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="7:00pm"
+                            android:textColor="@color/ltegry"
+                            android:fontFamily="monospace"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginStart="5dp"
+                            android:textSize="12sp"
+                            android:gravity="center_vertical"
+                            android:layout_column="2"/>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/cardHouseIcon"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/house"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_column="1"/>
+
+                        <TextView
+                            android:id="@+id/cardVenueText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="The Rockpile"
+                            android:textColor="@color/ltegry"
+                            android:fontFamily="monospace"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginStart="5dp"
+                            android:textSize="12sp"
+                            android:gravity="center_vertical"
+                            android:layout_column="2"/>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/cardMoneyIcon"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/money"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_column="1"/>
+
+                        <TextView
+                            android:id="@+id/cardCost"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Free"
+                            android:textColor="@color/ltegry"
+                            android:fontFamily="monospace"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginStart="5dp"
+                            android:textSize="12sp"
+                            android:gravity="center_vertical"
+                            android:layout_column="2"/>
+                    </TableRow>
+
+                </TableLayout>
 
             </LinearLayout>
 
-            <RelativeLayout
+            <TextView
+                android:id="@+id/cardDesc"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="1">
-
-                <TextView
-                    android:id="@+id/cardBandName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Perivale"
-                    android:textColor="@color/wht"
-                    android:textSize="16sp"
-                    android:fontFamily="monospace"
-                    android:layout_below="@+id/cardTitle"
-                    android:gravity="center_horizontal"
-                    android:layout_marginTop="5dp"
-                    android:textStyle="italic"/>
-
-                <ImageView
-                    android:id="@+id/cardClockIcon"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/clock"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_below="@+id/cardBandName"/>
-
-                <TextView
-                    android:id="@+id/cardTimeText"
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:text="7:00pm"
-                    android:textColor="@color/ltegry"
-                    android:fontFamily="monospace"
-                    android:layout_toRightOf="@id/cardClockIcon"
-                    android:layout_toEndOf="@id/cardClockIcon"
-                    android:layout_below="@id/cardBandName"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginStart="5dp"
-                    android:textSize="15sp"
-                    android:gravity="center_vertical"/>
-
-                <ImageView
-                    android:id="@+id/cardHouseIcon"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/house"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_below="@+id/cardClockIcon"/>
-
-                <TextView
-                    android:id="@+id/cardVenueText"
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:text="The Rockpile"
-                    android:textColor="@color/ltegry"
-                    android:fontFamily="monospace"
-                    android:layout_toRightOf="@id/cardClockIcon"
-                    android:layout_toEndOf="@id/cardClockIcon"
-                    android:layout_below="@id/cardTimeText"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginStart="5dp"
-                    android:textSize="15sp"
-                    android:gravity="center_vertical"/>
-
-                <ImageView
-                    android:id="@+id/cardMoneyIcon"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/money"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_below="@id/cardHouseIcon"/>
-
-                <TextView
-                    android:id="@+id/cardCost"
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:text="Free"
-                    android:textColor="@color/ltegry"
-                    android:fontFamily="monospace"
-                    android:layout_toRightOf="@id/cardClockIcon"
-                    android:layout_toEndOf="@id/cardClockIcon"
-                    android:layout_below="@id/cardVenueText"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginStart="5dp"
-                    android:textSize="15sp"
-                    android:gravity="center_vertical"/>
-
-                <TextView
-                    android:id="@+id/cardDesc"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="If this goes into a dot dot dot on the second line I would say that I most certainly am a God"
-                    android:layout_below="@id/cardMoneyIcon"
-                    android:textColor="@color/medgry"
-                    android:layout_marginTop="7dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginStart="5dp"
-                    android:textStyle="italic"
-                    android:maxLines="2"
-                    android:ellipsize="end"
-                    android:scrollHorizontally="true"/>
-
-                <TextView
-                    android:id="@+id/cardTitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Masks Off with everyone"
-                    android:textColor="@color/wht"
-                    android:textSize="18sp"
-                    android:fontFamily="monospace"
-                    android:gravity="center_horizontal"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
-
-
-            </RelativeLayout>
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="If this goes into a dot dot dot on the second line I would say that I most certainly am a God"
+                android:textColor="@color/medgry"
+                android:layout_marginTop="7dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
+                android:paddingBottom="10dp"
+                android:textStyle="italic"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:scrollHorizontally="true"
+                android:gravity="center_horizontal"/>
 
         </LinearLayout>
+
 
     </android.support.v7.widget.CardView>
 

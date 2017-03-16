@@ -8,7 +8,7 @@ package lemonapps.localmusicscene;
 
 public class FeedItem {
     private String title = "";
-    private String artist = "";
+    private String artist = "abc";
     private String date = "";
     private String time = "";
     private String location = "";
