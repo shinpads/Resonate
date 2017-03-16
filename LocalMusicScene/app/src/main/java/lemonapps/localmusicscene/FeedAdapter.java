@@ -54,7 +54,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder>{
             super(view);
             title =  (TextView) view.findViewById(R.id.cardTitle);
             artist =  (TextView) view.findViewById(R.id.cardBandName);
-            date =  (TextView) view.findViewById(R.id.cardDate);
+            //date =  (TextView) view.findViewById(R.id.cardDate);
             time =  (TextView) view.findViewById(R.id.cardTimeText);
             location =  (TextView) view.findViewById(R.id.cardVenueText);
             cost =  (TextView) view.findViewById(R.id.cardCost);

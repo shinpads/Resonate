@@ -240,7 +240,17 @@ public class SQLConnection {
         }
         return new ArrayList<>();
     }
-
+    public boolean saveEvent(String a,String b,String c,String d,String e,String f,String g){
+        String update = "INSERT INTO Event(Event_title,Event_artist,Event_date,Event_time,Event_location,Event_cost,Event_desc) VALUES('a','b','c','d','e','f','g')";
+        try{
+            Statement statement = con.createStatement();
+            statement.executeUpdate(update);
+            return true;
+        }catch (Exception ex){
+            Log.e("SAVE EVENT", ex.getMessage());
+        }
+        return false;
+    }
 
 
     /*
