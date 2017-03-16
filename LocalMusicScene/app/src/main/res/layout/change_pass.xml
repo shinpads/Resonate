@@ -1,8 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarHigh"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/blk"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:elevation="4dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/profpic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/lock"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:id="@+id/profileText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/myProfile"
+                android:textSize="18sp"
+                android:textAllCaps="true"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:clickable="true"
+                android:textColor="@color/wht"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/profpic"
+                android:layout_toEndOf="@+id/profpic"
+                android:layout_marginStart="20dp"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
 
     <EditText
         android:id="@+id/ChgPassOld"
@@ -13,8 +58,8 @@
         android:padding="25dp"
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
-        android:elevation="5dp"
-        android:text=""/>
+        android:text=""
+        android:layout_marginTop="15dp"/>
 
 
     <EditText
@@ -26,7 +71,6 @@
         android:padding="25dp"
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
-        android:elevation="5dp"
         android:text=""/>
 
 
@@ -39,7 +83,6 @@
         android:padding="25dp"
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
-        android:elevation="5dp"
         android:text=""/>
 
     <Button
@@ -56,7 +99,7 @@
         android:textColor="?android:attr/textColorPrimaryInverse"
         android:textSize="18sp"
         android:clickable="true"
-        android:elevation="15dp"
+        android:elevation="2dp"
         />
 
 </LinearLayout>
