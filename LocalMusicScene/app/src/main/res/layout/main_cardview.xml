@@ -34,6 +34,7 @@
                 android:textSize="14sp"
                 android:textColor="@color/medgry"
                 android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
                 android:layout_marginBottom="7dp"
                 android:id="@+id/cardBandName"/>
 
@@ -84,7 +85,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:layout_marginTop="5dp">
+                    android:layout_marginTop="5dp"
+                    android:shrinkColumns="0"
+                    android:stretchColumns="2">
 
                     <TableRow
                         android:layout_width="match_parent"
@@ -107,7 +110,7 @@
                             android:id="@+id/cardDateText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Wednesday, September 25th 2017"
+                            android:text="Wednesday,September 25th 2017"
                             android:textColor="@color/ltegry"
                             android:fontFamily="monospace"
                             android:layout_marginTop="10dp"
@@ -180,7 +183,6 @@
                             android:layout_marginLeft="5dp"
                             android:layout_marginStart="5dp"
                             android:textSize="12sp"
-                            android:gravity="center_vertical"
                             android:layout_column="2"/>
 
                     </TableRow>
@@ -213,7 +215,6 @@
                             android:layout_marginLeft="5dp"
                             android:layout_marginStart="5dp"
                             android:textSize="12sp"
-                            android:gravity="center_vertical"
                             android:layout_column="2"/>
                     </TableRow>
 
