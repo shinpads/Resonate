@@ -30,7 +30,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder>{
     @Override
     public void onBindViewHolder (ViewHolder viewHolder, int i){
         FeedItem feedItem = feedItemList.get(i);
-        //viewHolder.artist.setText(feedItem.getArtist());
+        viewHolder.artist.setText(feedItem.getArtist());
         viewHolder.title.setText(feedItem.getTitle());
         viewHolder.date.setText(feedItem.getDate());
         viewHolder.time.setText(feedItem.getTime());
@@ -53,7 +53,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder>{
         public ViewHolder (View view){
             super(view);
             title =  (TextView) view.findViewById(R.id.cardTitle);
-            //artist =  (TextView) view.findViewById(R.id.cardBandName);
+            artist =  (TextView) view.findViewById(R.id.cardBandName);
             date =  (TextView) view.findViewById(R.id.cardDateText);
             time =  (TextView) view.findViewById(R.id.cardTimeText);
             location =  (TextView) view.findViewById(R.id.cardVenueText);

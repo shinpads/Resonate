@@ -7,4 +7,6 @@
     <color name="accent">#8200ff</color>
     <color name="medgry">#c7898989</color>
     <color name="nosel">#54ffffff</color>
+    <color name="gradgry">#292929</color>
+    <color name="bkgry">#414141</color>
 </resources>
