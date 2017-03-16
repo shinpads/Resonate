@@ -14,7 +14,8 @@
     <FrameLayout
         android:id="@+id/mainPlaceHolder"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/bkgry">
 
 
         <include layout="@layout/fragment_feed"/>
