@@ -33,12 +33,15 @@ public class ManageBand extends AppCompatActivity {
 
     }
 
-    private void saveBandInfo(){
+    private void saveBandInfo(){/*
         if(sqlcon.saveBandInfo(nameTxt.getText().toString(),nameTxt.getText().toString(),genereSpin.getSelectedItem().toString(),bioTxt.getText().toString(),locationTxt.getText().toString())){
             Toast.makeText(getApplicationContext(),"Information Saved",Toast.LENGTH_SHORT).show();
         }
         else{
             Toast.makeText(getApplicationContext(),"Failed To Save",Toast.LENGTH_SHORT).show();
         }
+        */
+        //TODO SAVE BAND INFO
+
     }
 }

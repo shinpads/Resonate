@@ -43,6 +43,7 @@ public class HomePage extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private FeedAdapter adapter;
+    private int totalXScroll = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,11 +51,20 @@ public class HomePage extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         feedslist = new ArrayList<>();
-        for(int i = 0; i < 200; i ++) {
-            feedslist.add(new FeedItem("test one two"));
-        }
         adapter = new FeedAdapter(getApplicationContext(),feedslist);
         recyclerView.setAdapter(adapter);
+
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener(){
+            @Override
+            public void onScrolled(RecyclerView rv, int dx, int dy){
+                super.onScrolled(rv,dx,dy);
+                totalXScroll += dy;
+                Log.i("Scroll",""+recyclerView.computeVerticalScrollOffset()+" "+recyclerView.computeVerticalScrollRange());
+            }
+        });
+        for(int i = 0; i < 10; i ++) {
+            feedslist.add(new FeedItem("test one two"));
+        }
         navDrawer = (DrawerLayout)findViewById(R.id.drawer_layout);
 
         con = new SQLConnection();
