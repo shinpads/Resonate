@@ -26,7 +26,7 @@ public class AddEvent extends AppCompatActivity {
         btnAddEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(con.saveEvent(eTitle.getText().toString(),eArtist.getText().toString(),"DATE HERE",eTime.getText().toString(),eDate.getText().toString(),eLocation.getText().toString(),eDesc.getText().toString())){
+                if(con.saveEvent(eTitle.getText().toString(),eArtist.getText().toString(),eDate.getText().toString(),eTime.getText().toString(),eDate.getText().toString(),eLocation.getText().toString(),eDesc.getText().toString())){
                     Toast.makeText(getApplicationContext(),"Event Saved",Toast.LENGTH_SHORT);
                     finish();
                 }

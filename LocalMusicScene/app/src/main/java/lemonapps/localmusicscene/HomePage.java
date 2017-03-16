@@ -46,6 +46,7 @@ public class HomePage extends AppCompatActivity {
     LinearLayoutManager layoutManager;
     private int pastVisiblesItems, visibleItemCount, totalItemCount;
     private boolean loading = false;
+    private int offset = 10;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,7 +71,12 @@ public class HomePage extends AppCompatActivity {
                     if (loading == false){
                         if((visibleItemCount + pastVisiblesItems) >= totalItemCount){
                             loading = true;
-                            Toast.makeText(getApplicationContext(),"Load More",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(),"Loading more...",Toast.LENGTH_SHORT);
+                            for(FeedItem i : con.fetchFeed(location,offset,10)) {
+                                feedslist.add(i);
+                            }
+                            offset+=10;
+                            loading = false;
                         }
                     }
                 }
