@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:text=""
+        android:id="@+id/showTitleField"
+        android:hint="Show Name"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:text=""
+        android:id="@+id/bandNameField"
+        android:hint="Band Name(s)" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="time"
+        android:text=""
+        android:id="@+id/timeField"
+        android:hint="Show Name" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Venue Address"
+        android:id="@+id/venueField" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/priceField"
+        android:hint="Price"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:text=""
+        android:id="@+id/showDescField"
+        android:hint="Description" />
+
+
+    <Button
+        android:contentDescription="add event"
+        android:id="@+id/loginButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="105dp"
+        android:layout_marginLeft="105dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/login_button"
+        android:text="Add Event"
+        android:textColor="@color/wht"
+        android:textSize="18sp"
+        android:clickable="true"
+        android:fontFamily="monospace"
+        android:elevation="2dp"/>
+</LinearLayout>
