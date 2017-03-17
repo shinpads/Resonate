@@ -64,6 +64,7 @@ public class HomePage extends AppCompatActivity {
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
+                con = new SQLConnection();
                 feedslist.clear();
                 offset = 0;
                 for(FeedItem i : con.fetchFeed(location,0,5)) {
