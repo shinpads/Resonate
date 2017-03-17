@@ -9,6 +9,7 @@ import android.provider.ContactsContract;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -47,6 +48,7 @@ public class HomePage extends AppCompatActivity {
     private RecyclerView recyclerView;
     private FeedAdapter adapter;
     LinearLayoutManager layoutManager;
+    SwipeRefreshLayout swipeRefreshLayout;
     private int pastVisiblesItems, visibleItemCount, totalItemCount;
     private boolean loading = false;
     private int offset = 5;
@@ -58,6 +60,19 @@ public class HomePage extends AppCompatActivity {
         con = new SQLConnection();
         loadingCircle = (ProgressBar)findViewById(R.id.loadingCircle);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        swipeRefreshLayout = (SwipeRefreshLayout)findViewById(R.id.swipeRefreshLayout);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                feedslist.clear();
+                offset = 0;
+                for(FeedItem i : con.fetchFeed(location,0,5)) {
+                    feedslist.add(feedslist.size(),i);
+                }
+                adapter.notifyDataSetChanged();
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         feedslist = new ArrayList<>();
         adapter = new FeedAdapter(getApplicationContext(),feedslist);
