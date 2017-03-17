@@ -23,7 +23,7 @@
     </style>
 
     <style name="navText" parent="ResonateTheme">
-        <item name="android:fontFamily">monospace</item>
+        <item name="android:fontFamily">serif-monospace</item>
         <item name="android:textColor">@color/blk</item>
     </style>
     

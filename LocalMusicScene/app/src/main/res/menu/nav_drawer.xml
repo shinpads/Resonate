@@ -4,7 +4,7 @@
     <item android:title="@string/home"
         android:icon="@drawable/housedark"/>
     <item android:title="@string/savedEvents"
-        android:icon="@drawable/savevents"/>
+        android:icon="@drawable/ticket"/>
     <item android:title="@string/favBands"
         android:icon="@drawable/favbands"/>
     <item android:title="@string/manBands"

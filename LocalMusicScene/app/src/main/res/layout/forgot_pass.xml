@@ -21,7 +21,7 @@
             android:text="@string/forgotText"
             android:textSize="25sp"
             android:gravity="center_horizontal"
-            android:fontFamily="monospace"
+            android:fontFamily="serif-monospace"
             android:layout_margin="15dp"
             android:textColor="@color/drkgry"/>
 
@@ -52,7 +52,7 @@
             android:textColor="?android:attr/textColorPrimaryInverse"
             android:textSize="18sp"
             android:clickable="true"
-            android:fontFamily="monospace"
+            android:fontFamily="serif-monospace"
             android:elevation="2dp"/>
 
     </RelativeLayout>

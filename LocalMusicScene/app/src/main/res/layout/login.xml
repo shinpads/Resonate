@@ -52,7 +52,7 @@
             android:layout_below="@+id/loginButton"
             android:layout_centerHorizontal="true"
             android:textColor="@color/medgry"
-            android:fontFamily="monospace" />
+            android:fontFamily="serif-monospace" />
 
         <Button
             android:contentDescription="@string/loginDesc"
@@ -68,9 +68,9 @@
             android:background="@drawable/login_button"
             android:text="@string/loginDesc"
             android:textColor="@color/wht"
-            android:textSize="18sp"
+            android:textSize="19sp"
             android:clickable="true"
-            android:fontFamily="monospace"
+            android:fontFamily="serif-monospace"
             android:elevation="2dp"/>
 
         <TextView
@@ -83,9 +83,9 @@
             android:layout_marginBottom="25dp"
             android:clickable="true"
             android:textStyle="normal|italic"
-            android:textSize="16sp"
+            android:textSize="17sp"
             android:textColor="@color/medgry"
-            android:fontFamily="monospace"
+            android:fontFamily="serif-monospace"
             android:layout_alignParentBottom="true"/>
 
     </RelativeLayout>
