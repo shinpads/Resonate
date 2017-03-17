@@ -67,7 +67,8 @@
         android:layout_height="wrap_content"
         android:inputType="textCapWords"
         android:text="David"
-        android:layout_marginLeft="15dp"/>
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -86,7 +87,8 @@
         android:layout_height="wrap_content"
         android:inputType="textCapWords"
         android:text="MacLean"
-        android:layout_marginLeft="15dp"/>
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -106,7 +108,8 @@
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:text="david.41hz@gmail.com"
-        android:layout_marginLeft="15dp"/>
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"

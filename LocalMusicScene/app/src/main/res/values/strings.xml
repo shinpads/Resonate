@@ -44,6 +44,15 @@
     <string name="firstName">First Name</string>
     <string name="lastName">Last Name</string>
     <string name="update">Update</string>
+    <string name="addEvent">Add Event</string>
+    <string name="showName">Show Name</string>
+    <string name="perfBands">Band(s) Performing</string>
+    <string name="tos">Time of Show</string>
+    <string name="dos">Date of Show</string>
+    <string name="venName">Venue Name</string>
+    <string name="venAdd">Venue Address</string>
+    <string name="poa">Price of Admission</string>
+    <string name="descos">Description of Show</string>
 
     <string-array name="genre_array">
         <item>Alternative</item>
