@@ -14,7 +14,7 @@ public class Profile extends AppCompatActivity {
         setContentView(R.layout.my_profile);
 
  Button profChgPassButton = (Button)findViewById(R.id.profchgpass);
-
+    //
        profChgPassButton.setOnClickListener(new View.OnClickListener() {
             @Override
           public void onClick(View v) {
