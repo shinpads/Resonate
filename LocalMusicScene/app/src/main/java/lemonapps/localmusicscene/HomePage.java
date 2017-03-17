@@ -46,7 +46,7 @@ public class HomePage extends AppCompatActivity {
     LinearLayoutManager layoutManager;
     private int pastVisiblesItems, visibleItemCount, totalItemCount;
     private boolean loading = false;
-    private int offset = 10;
+    private int offset = 5;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +64,7 @@ public class HomePage extends AppCompatActivity {
             @Override
             public void onScrolled(RecyclerView rv, int dx, int dy){
                 super.onScrolled(rv,dx,dy);
+
                 if (dy > 0){
                     visibleItemCount = layoutManager.getChildCount();
                     totalItemCount = layoutManager.getItemCount();
@@ -71,21 +72,23 @@ public class HomePage extends AppCompatActivity {
                     if (loading == false){
                         if((visibleItemCount + pastVisiblesItems) >= totalItemCount){
                             loading = true;
-                            Toast.makeText(getApplicationContext(),"Loading more...",Toast.LENGTH_SHORT);
-                            for(FeedItem i : con.fetchFeed(location,offset,10)) {
-                                feedslist.add(i);
+
+                            for(FeedItem i : con.fetchFeed(location,offset,5)) {
+                                feedslist.add(feedslist.size(),i);
                             }
-                            offset+=10;
+                            offset+=5;
                             loading = false;
+                            adapter.notifyDataSetChanged();
                         }
                     }
                 }
             }
         });
 
-        for(FeedItem i : con.fetchFeed(location,0,10)) {
-            feedslist.add(i);
+        for(FeedItem i : con.fetchFeed(location,0,5)) {
+            feedslist.add(feedslist.size(),i);
         }
+
         navDrawer = (DrawerLayout)findViewById(R.id.drawer_layout);
 
         con = new SQLConnection();

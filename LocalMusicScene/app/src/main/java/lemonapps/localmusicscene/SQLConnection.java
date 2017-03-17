@@ -217,8 +217,7 @@ public class SQLConnection {
 
      */
     public List<FeedItem> fetchFeed(String location, int offset, int ammount){
-
-        String query = "SELECT * FROM Eventz ORDER BY Event_date, Event_time ASC OFFSET " + offset + " ROWS FETCH NEXT "+ ammount +" ROWS ONLY";
+        String query = "SELECT * FROM Eventz ORDER BY Event_ID ASC OFFSET " + offset + " ROWS FETCH NEXT "+ ammount +" ROWS ONLY";
         FeedItem curFeedItem;
         List<FeedItem> feedItems = new ArrayList<FeedItem>();
         try{
