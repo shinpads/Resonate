@@ -9,7 +9,9 @@ import android.widget.EditText;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class AddEvent extends AppCompatActivity {
     EditText eTitle,eArtist,eLocation,eDesc,eCost;
@@ -31,12 +33,14 @@ public class AddEvent extends AppCompatActivity {
         eDesc = (EditText) findViewById(R.id.showDescField);
         btnAddEvent = (Button)findViewById(R.id.addEventButton);
         final Calendar calendar = Calendar.getInstance();
+        Date date = calendar.getTime();
+        final String dateStr = new SimpleDateFormat("MMM-dd-yyyy").format(date);
         calendar.set(eDate.getDayOfMonth(),eDate.getMonth(),eDate.getYear());
         final String time = ""+eTime.getCurrentHour() + ":"+ eTime.getCurrentMinute();
         btnAddEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(con.saveEvent(eTitle.getText().toString(),eArtist.getText().toString(),calendar.getTime(),time,eLocation.getText().toString(),eCost.getText().toString(),eDesc.getText().toString())){
+                if(con.saveEvent(eTitle.getText().toString(),eArtist.getText().toString(),dateStr,time,eLocation.getText().toString(),eCost.getText().toString(),eDesc.getText().toString())){
                     Toast.makeText(getApplicationContext(),"Event Saved",Toast.LENGTH_SHORT).show();
                     finish();
                 }
