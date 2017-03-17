@@ -109,7 +109,7 @@ public class HomePage extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomePage.this,AddEvent.class));
+                startActivity(new Intent(getApplicationContext(),AddEvent.class));
             }
         });
         navDrawerUserName.setText(con.getName(Global.email));
@@ -118,8 +118,9 @@ public class HomePage extends AppCompatActivity {
         navMen.getItem(0).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                Intent i = new Intent(HomePage.this, HomePage.class);
+                Intent i = new Intent(getApplicationContext(), HomePage.class);
                 startActivity(i);
+                finish();
 
                 return false;
             }
