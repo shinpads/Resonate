@@ -34,7 +34,7 @@ public class AddEvent extends AppCompatActivity {
         btnAddEvent = (Button)findViewById(R.id.addEventButton);
         final Calendar calendar = Calendar.getInstance();
         Date date = calendar.getTime();
-        final String dateStr = new SimpleDateFormat("MMM-dd-yyyy").format(date);
+        final String dateStr = new SimpleDateFormat("MMM dd, yyyy").format(date);
         calendar.set(eDate.getDayOfMonth(),eDate.getMonth(),eDate.getYear());
         final String time = ""+eTime.getCurrentHour() + ":"+ eTime.getCurrentMinute();
         btnAddEvent.setOnClickListener(new View.OnClickListener() {
