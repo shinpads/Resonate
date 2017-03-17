@@ -11,8 +11,10 @@ import java.util.List;
 
 
 /**
- * Created by Rob on 2017-03-14.
+ * Created by Steve and Rob on 2017-03-14.
  */
+
+//This is a comment
 
 public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder>{
     private List<FeedItem> feedItemList;
