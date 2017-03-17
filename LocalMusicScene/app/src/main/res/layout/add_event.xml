@@ -131,9 +131,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/dateField"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginLeft="30dp"/>
+                android:layout_marginTop="10dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -213,7 +211,8 @@
         android:inputType="textMultiLine"
         android:text=""
         android:id="@+id/showDescField"
-        android:hint="Description" />
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"/>
 
 
     <Button

@@ -73,6 +73,7 @@ public class HomePage extends AppCompatActivity {
                 swipeRefreshLayout.setRefreshing(false);
             }
         });
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         feedslist = new ArrayList<>();
         adapter = new FeedAdapter(getApplicationContext(),feedslist);

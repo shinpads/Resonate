@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <android.support.v7.widget.CardView
@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="3dp">
+            android:layout_margin="4dp">
 
             <TextView
                 android:layout_width="match_parent"
@@ -85,8 +85,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:shrinkColumns="0,1"
-                    android:stretchColumns="1">
+                    android:stretchColumns="2">
 
                     <TableRow
                         android:layout_width="match_parent"
@@ -107,17 +106,16 @@
 
                         <TextView
                             android:id="@+id/cardDateText"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Wednesday,September 25th 2017"
+                            android:text="Wednesday,September 25"
                             android:textColor="@color/ltegry"
                             android:fontFamily="serif-monospace"
-                            android:layout_marginTop="10dp"
                             android:layout_marginLeft="5dp"
                             android:layout_marginStart="5dp"
                             android:textSize="13sp"
                             android:gravity="center_vertical"
-                            android:layout_column="2"/>
+                            android:layout_column="2"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="3dp"/>
 
                     </TableRow>
 
@@ -140,17 +138,16 @@
 
                         <TextView
                             android:id="@+id/cardTimeText"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
                             android:text="7:00pm"
                             android:textColor="@color/ltegry"
                             android:fontFamily="serif-monospace"
-                            android:layout_marginTop="10dp"
+                            android:layout_gravity="center_vertical"
                             android:layout_marginLeft="5dp"
                             android:layout_marginStart="5dp"
                             android:textSize="13sp"
                             android:gravity="center_vertical"
-                            android:layout_column="2"/>
+                            android:layout_column="2"
+                            android:layout_marginTop="2dp"/>
 
                     </TableRow>
 
@@ -173,16 +170,16 @@
 
                         <TextView
                             android:id="@+id/cardVenueText"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="The Rockpile"
+                            android:text="3135 Dover Crescent L5L 5V3"
                             android:textColor="@color/ltegry"
                             android:fontFamily="serif-monospace"
-                            android:layout_marginTop="10dp"
+                            android:layout_gravity="center_vertical"
                             android:layout_marginLeft="5dp"
                             android:layout_marginStart="5dp"
                             android:textSize="13sp"
-                            android:layout_column="2"/>
+                            android:layout_column="2"
+                            android:maxLines="2"
+                            android:layout_marginTop="1dp"/>
 
                     </TableRow>
 
@@ -205,12 +202,10 @@
 
                         <TextView
                             android:id="@+id/cardCost"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
                             android:text="Free"
                             android:textColor="@color/ltegry"
                             android:fontFamily="serif-monospace"
-                            android:layout_marginTop="10dp"
+                            android:layout_gravity="center_vertical"
                             android:layout_marginLeft="5dp"
                             android:layout_marginStart="5dp"
                             android:textSize="13sp"
