@@ -29,6 +29,14 @@ public class EventFull extends AppCompatActivity {
         cost = (TextView)findViewById(R.id.fullShowCost);
         desc =  (TextView)findViewById(R.id.fullShowDesc);
         ticket = (ImageButton)findViewById(R.id.fullShowSaveEvent);
+        title.setText(values.get(0));
+        artist.setText(values.get(1));
+        date.setText(values.get(2));
+        time.setText(values.get(3));
+        location.setText(values.get(4));
+        cost.setText(values.get(5));
+        desc.setText(values.get(6));
+
 
     }
 }
