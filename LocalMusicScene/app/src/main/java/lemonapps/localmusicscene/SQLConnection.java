@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Formatter;
 import java.util.List;
 import java.util.Random;
+import java.util.Date;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
@@ -217,12 +218,13 @@ public class SQLConnection {
 
      */
     public List<FeedItem> fetchFeed(String location, int offset, int ammount){
-        String query = "SELECT * FROM Eventz ORDER BY Event_ID ASC OFFSET " + offset + " ROWS FETCH NEXT "+ ammount +" ROWS ONLY";
+        String query = "SELECT * FROM Eventz ORDER BY Event_ID DESC OFFSET " + offset + " ROWS FETCH NEXT "+ ammount +" ROWS ONLY";
         FeedItem curFeedItem;
         List<FeedItem> feedItems = new ArrayList<FeedItem>();
         try{
             Statement statement = con.createStatement();
             ResultSet rs = statement.executeQuery(query);
+            Log.i("FETCH FEED","FROUND FEED");
             while(rs.next()){
                 curFeedItem = new FeedItem();
                 curFeedItem.setArtist(rs.getString("Event_artist"));
@@ -240,7 +242,7 @@ public class SQLConnection {
         }
         return new ArrayList<>();
     }
-    public boolean saveEvent(String a,String b,String c,String d,String e,String f,String g){
+    public boolean saveEvent(String a,String b,Date c,String d,String e,String f,String g){
         String update = "INSERT INTO Eventz(Event_title,Event_artist,Event_date,Event_time,Event_location,Event_cost,Event_desc) VALUES('"+a+"','"+b+"','"+c+"','"+d+"','"+e+"','"+f+"','"+g+"')";
         try{
             Statement statement = con.createStatement();

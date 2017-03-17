@@ -13,16 +13,17 @@ public class Profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.my_profile);
 
-//        Button profChgPassButton = (Button)findViewById(R.id.profchkpass);
-//
-//        profChgPassButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent i = new Intent(Profile.this, ChangePasswords.class);
-//                startActivity(i);
-//
-//            }
-//        });
+ Button profChgPassButton = (Button)findViewById(R.id.profchgpass);
+
+       profChgPassButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+          public void onClick(View v) {
+                Intent i = new Intent(Profile.this, ChangePasswords.class);
+                startActivity(i);
+
+           }
+       });
+
     }
 
 

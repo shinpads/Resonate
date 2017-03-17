@@ -9,6 +9,7 @@ import android.provider.ContactsContract;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -18,8 +19,10 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,11 +42,13 @@ public class HomePage extends AppCompatActivity {
     String location;
     DrawerLayout navDrawer;
     FloatingActionButton fab;
+    ProgressBar loadingCircle;
     private SQLConnection con;
     private List<FeedItem> feedslist;
     private RecyclerView recyclerView;
     private FeedAdapter adapter;
     LinearLayoutManager layoutManager;
+    SwipeRefreshLayout swipeRefreshLayout;
     private int pastVisiblesItems, visibleItemCount, totalItemCount;
     private boolean loading = false;
     private int offset = 5;
@@ -53,7 +58,21 @@ public class HomePage extends AppCompatActivity {
         setContentView(R.layout.nav_drawer);
         fab = (FloatingActionButton)findViewById(R.id.fabPlus);
         con = new SQLConnection();
+        loadingCircle = (ProgressBar)findViewById(R.id.loadingCircle);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        swipeRefreshLayout = (SwipeRefreshLayout)findViewById(R.id.swipeRefreshLayout);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                feedslist.clear();
+                offset = 0;
+                for(FeedItem i : con.fetchFeed(location,0,5)) {
+                    feedslist.add(feedslist.size(),i);
+                }
+                adapter.notifyDataSetChanged();
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         feedslist = new ArrayList<>();
         adapter = new FeedAdapter(getApplicationContext(),feedslist);
@@ -72,12 +91,13 @@ public class HomePage extends AppCompatActivity {
                     if (loading == false){
                         if((visibleItemCount + pastVisiblesItems) >= totalItemCount){
                             loading = true;
-
+                            loadingCircle.setVisibility(View.VISIBLE);
                             for(FeedItem i : con.fetchFeed(location,offset,5)) {
                                 feedslist.add(feedslist.size(),i);
                             }
                             offset+=5;
                             loading = false;
+                            loadingCircle.setVisibility(View.INVISIBLE);
                             adapter.notifyDataSetChanged();
                         }
                     }
@@ -88,7 +108,7 @@ public class HomePage extends AppCompatActivity {
         for(FeedItem i : con.fetchFeed(location,0,5)) {
             feedslist.add(feedslist.size(),i);
         }
-
+        loadingCircle.setVisibility(View.INVISIBLE);
         navDrawer = (DrawerLayout)findViewById(R.id.drawer_layout);
 
         con = new SQLConnection();
@@ -108,7 +128,7 @@ public class HomePage extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomePage.this,AddEvent.class));
+                startActivity(new Intent(getApplicationContext(),AddEvent.class));
             }
         });
         navDrawerUserName.setText(con.getName(Global.email));
@@ -117,6 +137,10 @@ public class HomePage extends AppCompatActivity {
         navMen.getItem(0).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
+                Intent i = new Intent(getApplicationContext(), HomePage.class);
+                startActivity(i);
+                finish();
+
                 return false;
             }
         });
