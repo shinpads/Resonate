@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle" >
+
+    <gradient
+        android:startColor="@color/gradgry"
+        android:centerColor="@color/drkgry"
+        android:endColor="@color/cardview_dark_background"
+        android:angle="90"/>
+
+
+
+</shape>

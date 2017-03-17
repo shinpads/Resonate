@@ -22,8 +22,7 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_drawer_header"
-        app:menu="@menu/nav_drawer"
-        android:background="@color/ltegry"/>
+        app:menu="@menu/nav_drawer" />
 
 
 

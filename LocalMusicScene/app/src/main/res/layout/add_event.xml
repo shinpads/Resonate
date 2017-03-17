@@ -1,7 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarHigh"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/blk"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:elevation="4dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/profpic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/plus_sign"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:id="@+id/profileText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/addEvent"
+                android:textSize="18sp"
+                android:textAllCaps="true"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:clickable="true"
+                android:textColor="@color/wht"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/profpic"
+                android:layout_toEndOf="@+id/profpic"
+                android:layout_marginStart="20dp"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/showName"
+        android:fontFamily="monospace"
+        android:textColor="@color/drkgry"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:textSize="15sp"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -9,44 +76,136 @@
         android:inputType="textMultiLine"
         android:text=""
         android:id="@+id/showTitleField"
-        android:hint="Show Name"/>
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:maxLines="2"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/perfBands"
+        android:fontFamily="monospace"
+        android:textColor="@color/drkgry"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:textSize="15sp"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
         android:text=""
         android:id="@+id/bandNameField"
-        android:hint="Band Name(s)" />
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tos"
+        android:fontFamily="monospace"
+        android:textColor="@color/drkgry"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:textSize="15sp"/>
+
+            <TimePicker
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/timeField"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/dos"
+                android:fontFamily="monospace"
+                android:textColor="@color/drkgry"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:textSize="15sp"/>
+
+            <DatePicker
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/dateField"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/venName"
+                android:fontFamily="monospace"
+                android:textColor="@color/drkgry"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:textSize="15sp"/>
+
+
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="time"
         android:text=""
-        android:id="@+id/timeField"
-        android:hint="Time" />
+        android:id="@+id/venueField"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"/>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:id="@+id/dateField"
-        android:hint="Date" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/venAdd"
+                android:fontFamily="monospace"
+                android:textColor="@color/drkgry"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:textSize="15sp"/>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:hint="Venue Address"
-        android:id="@+id/venueField" />
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/venueAddressField"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/poa"
+                android:fontFamily="monospace"
+                android:textColor="@color/drkgry"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:textSize="15sp"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=""
         android:id="@+id/priceField"
-        android:hint="Price"/>
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/descos"
+                android:fontFamily="monospace"
+                android:textColor="@color/drkgry"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:textSize="15sp"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -73,4 +232,8 @@
         android:clickable="true"
         android:fontFamily="monospace"
         android:elevation="2dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 </LinearLayout>
