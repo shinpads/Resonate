@@ -24,6 +24,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:id="@+id/fullShowTitle"
                 android:text="Masks off: False Face Society is becoming Perivale the Band"
                 android:textColor="@color/wht"
                 android:textSize="18sp"
@@ -35,6 +36,7 @@
         <ImageButton
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:id="@+id/fullShowSaveEvent"
             android:src="@drawable/ticket"
             android:background="@android:color/transparent"
             android:layout_weight="6"
@@ -102,7 +104,7 @@
                 android:layout_column="1" />
 
             <TextView
-                android:id="@+id/cardDateText"
+                android:id="@+id/fullShowDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Wednesday,September 25th 2017"
@@ -134,7 +136,7 @@
                 android:layout_column="1"/>
 
             <TextView
-                android:id="@+id/cardTimeText"
+                android:id="@+id/fullShowTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="7:00pm"
@@ -167,7 +169,7 @@
                 android:layout_column="1"/>
 
             <TextView
-                android:id="@+id/cardVenueText"
+                android:id="@+id/fullShowVenue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="The Rockpile"
@@ -199,7 +201,7 @@
                 android:layout_column="1"/>
 
             <TextView
-                android:id="@+id/cardCost"
+                android:id="@+id/fullShowCost"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Free"

@@ -52,6 +52,7 @@ public class HomePage extends AppCompatActivity {
     private int pastVisiblesItems, visibleItemCount, totalItemCount;
     private boolean loading = false;
     private int offset = 5;
+    private static HomePage context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,6 +82,7 @@ public class HomePage extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
+        context = HomePage.this;
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener(){
             @Override
             public void onScrolled(RecyclerView rv, int dx, int dy){
@@ -112,7 +114,6 @@ public class HomePage extends AppCompatActivity {
         }
         loadingCircle.setVisibility(View.INVISIBLE);
         navDrawer = (DrawerLayout)findViewById(R.id.drawer_layout);
-
         con = new SQLConnection();
         NavigationView navigationView = (NavigationView)findViewById(R.id.navDrawer);
         RelativeLayout navHeaderLayout = (RelativeLayout)navigationView.getHeaderView(0);
@@ -226,6 +227,18 @@ public class HomePage extends AppCompatActivity {
                 locationTxt.setText(location);
             }
         }
+    }
+
+    public static void viewClicked(int i){
+        Intent b = new Intent(context,EventFull.class);
+        View v = context.recyclerView.getChildAt(i);
+        FeedAdapter feedAdapter = (FeedAdapter)context.recyclerView.getAdapter();
+        FeedItem fi = feedAdapter.getItem(i);
+        ArrayList<String> values = new ArrayList<>();
+        values.add(fi.getTitle()); values.add(fi.getArtist()); values.add(fi.getDate()); values.add(fi.getTime()); values.add(fi.getLocation()); values.add(fi.getCost());
+        values.add (fi.getDesc());
+        b.putStringArrayListExtra("Values",values);
+        context.startActivity(b);
     }
 
 
