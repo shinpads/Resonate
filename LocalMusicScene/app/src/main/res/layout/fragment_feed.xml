@@ -28,4 +28,12 @@
         android:layout_marginRight="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"/>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/loadingCircle"
+        android:layout_above="@+id/fabPlus"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp" />
 </RelativeLayout>

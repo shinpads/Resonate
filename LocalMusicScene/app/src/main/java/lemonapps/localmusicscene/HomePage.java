@@ -21,6 +21,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,6 +41,7 @@ public class HomePage extends AppCompatActivity {
     String location;
     DrawerLayout navDrawer;
     FloatingActionButton fab;
+    ProgressBar loadingCircle;
     private SQLConnection con;
     private List<FeedItem> feedslist;
     private RecyclerView recyclerView;
@@ -54,6 +56,7 @@ public class HomePage extends AppCompatActivity {
         setContentView(R.layout.nav_drawer);
         fab = (FloatingActionButton)findViewById(R.id.fabPlus);
         con = new SQLConnection();
+        loadingCircle = (ProgressBar)findViewById(R.id.loadingCircle);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         feedslist = new ArrayList<>();
@@ -73,12 +76,13 @@ public class HomePage extends AppCompatActivity {
                     if (loading == false){
                         if((visibleItemCount + pastVisiblesItems) >= totalItemCount){
                             loading = true;
-
+                            loadingCircle.setVisibility(View.VISIBLE);
                             for(FeedItem i : con.fetchFeed(location,offset,5)) {
                                 feedslist.add(feedslist.size(),i);
                             }
                             offset+=5;
                             loading = false;
+                            loadingCircle.setVisibility(View.INVISIBLE);
                             adapter.notifyDataSetChanged();
                         }
                     }
@@ -89,7 +93,7 @@ public class HomePage extends AppCompatActivity {
         for(FeedItem i : con.fetchFeed(location,0,5)) {
             feedslist.add(feedslist.size(),i);
         }
-
+        loadingCircle.setVisibility(View.INVISIBLE);
         navDrawer = (DrawerLayout)findViewById(R.id.drawer_layout);
 
         con = new SQLConnection();
