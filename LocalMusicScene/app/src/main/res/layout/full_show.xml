@@ -24,6 +24,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:id="@+id/fullShowTitle"
                 android:text="Masks off: False Face Society is becoming Perivale the Band"
                 android:textColor="@color/wht"
                 android:textSize="18sp"
@@ -35,6 +36,7 @@
         <ImageButton
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:id="@+id/fullShowSaveEvent"
             android:src="@drawable/ticket"
             android:background="@android:color/transparent"
             android:layout_weight="6"
@@ -102,11 +104,13 @@
                 android:layout_column="1" />
 
             <TextView
-                android:id="@+id/cardDateText"
+                android:id="@+id/fullShowDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="Wednesday,September 25th 2017"
                 android:textColor="@color/blk"
                 android:fontFamily="serif-monospace"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginStart="5dp"
                 android:textSize="16sp"
@@ -132,11 +136,13 @@
                 android:layout_column="1"/>
 
             <TextView
-                android:id="@+id/cardTimeText"
+                android:id="@+id/fullShowTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="7:00pm"
                 android:textColor="@color/blk"
                 android:fontFamily="serif-monospace"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginStart="5dp"
                 android:textSize="15sp"
@@ -163,30 +169,16 @@
                 android:layout_column="1"/>
 
             <TextView
-                android:id="@+id/cardVenueText"
+                android:id="@+id/fullShowVenue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="The Rockpile"
                 android:textColor="@color/blk"
                 android:fontFamily="serif-monospace"
-                android:layout_marginTop="13dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginStart="5dp"
                 android:textSize="15sp"
-                android:layout_column="2"/>
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/cardVenueAddress"
-                android:text="5555 Dundas St W, Etobicoke, ON M9B 1B8"
-                android:textColor="@color/blk"
-                android:fontFamily="serif-monospace"
-                android:layout_marginLeft="5dp"
-                android:layout_marginStart="5dp"
-                android:textSize="13sp"
                 android:layout_column="2"/>
 
         </TableRow>
@@ -209,11 +201,13 @@
                 android:layout_column="1"/>
 
             <TextView
-                android:id="@+id/cardCost"
+                android:id="@+id/fullShowCost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="Free"
                 android:textColor="@color/blk"
                 android:fontFamily="serif-monospace"
-                android:layout_marginTop="11dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginStart="5dp"
                 android:textSize="15sp"

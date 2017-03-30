@@ -21,16 +21,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.location.places.Place;
-
+import com.google.android.gms.location.places.Places;
 import com.google.android.gms.location.places.ui.PlaceAutocomplete;
 
+import org.w3c.dom.Text;
 
 import java.util.*;
 
@@ -51,6 +52,7 @@ public class HomePage extends AppCompatActivity {
     private int pastVisiblesItems, visibleItemCount, totalItemCount;
     private boolean loading = false;
     private int offset = 5;
+    private static HomePage context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +65,7 @@ public class HomePage extends AppCompatActivity {
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
+                con = new SQLConnection();
                 feedslist.clear();
                 offset = 0;
                 for(FeedItem i : con.fetchFeed(location,0,5)) {
@@ -79,6 +82,7 @@ public class HomePage extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
+        context = HomePage.this;
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener(){
             @Override
             public void onScrolled(RecyclerView rv, int dx, int dy){
@@ -110,7 +114,6 @@ public class HomePage extends AppCompatActivity {
         }
         loadingCircle.setVisibility(View.INVISIBLE);
         navDrawer = (DrawerLayout)findViewById(R.id.drawer_layout);
-
         con = new SQLConnection();
         NavigationView navigationView = (NavigationView)findViewById(R.id.navDrawer);
         RelativeLayout navHeaderLayout = (RelativeLayout)navigationView.getHeaderView(0);
@@ -224,6 +227,18 @@ public class HomePage extends AppCompatActivity {
                 locationTxt.setText(location);
             }
         }
+    }
+
+    public static void viewClicked(int i){
+        Intent b = new Intent(context,EventFull.class);
+        View v = context.recyclerView.getChildAt(i);
+        FeedAdapter feedAdapter = (FeedAdapter)context.recyclerView.getAdapter();
+        FeedItem fi = feedAdapter.getItem(i);
+        ArrayList<String> values = new ArrayList<>();
+        values.add(fi.getTitle()); values.add(fi.getArtist()); values.add(fi.getDate()); values.add(fi.getTime()); values.add(fi.getLocation()); values.add(fi.getCost());
+        values.add (fi.getDesc());
+        b.putStringArrayListExtra("Values",values);
+        context.startActivity(b);
     }
 
 

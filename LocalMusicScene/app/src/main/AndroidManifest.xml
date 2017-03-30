@@ -50,7 +50,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Profile" />
-        <activity android:name=".AddEvent"></activity>
+        <activity android:name=".AddEvent" />
+        <activity android:name=".EventFull"></activity>
     </application>
 
 </manifest>
