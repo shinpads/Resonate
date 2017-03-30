@@ -71,6 +71,7 @@ public class HomePage extends AppCompatActivity {
                 for(FeedItem i : con.fetchFeed(location,0,5)) {
                     feedslist.add(feedslist.size(),i);
                 }
+                offset =5;
                 adapter.notifyDataSetChanged();
                 swipeRefreshLayout.setRefreshing(false);
             }

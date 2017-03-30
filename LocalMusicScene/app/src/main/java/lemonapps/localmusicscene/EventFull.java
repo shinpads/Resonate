@@ -36,7 +36,6 @@ public class EventFull extends AppCompatActivity {
         location.setText(values.get(4));
         cost.setText(values.get(5));
         desc.setText(values.get(6));
-
-
+        address.setText(values.get(7));
     }
 }
