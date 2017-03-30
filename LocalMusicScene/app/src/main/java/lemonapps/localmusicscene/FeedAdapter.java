@@ -1,10 +1,7 @@
 package lemonapps.localmusicscene;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
-import android.util.EventLog;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,13 +23,6 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder>{
         this.feedItemList = feedlist;
         this.context = cont;
     }
-
-
-    public FeedItem getItem(int position){
-        return feedItemList.get(position);
-    }
-
-
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i){
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.main_cardview,null);
@@ -54,7 +44,6 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder>{
     public int getItemCount(){
         return (null != feedItemList ? feedItemList.size() : 0);
     }
-
     public static class ViewHolder extends RecyclerView.ViewHolder{
         public TextView title;
         public TextView artist;
@@ -72,13 +61,8 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder>{
             location =  (TextView) view.findViewById(R.id.cardVenueText);
             cost =  (TextView) view.findViewById(R.id.cardCost);
             desc  =  (TextView) view.findViewById(R.id.cardDesc);
-            view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    HomePage.viewClicked(getAdapterPosition());
-                    Log.i("recycler view click",title.getText().toString());
-                }
-            });
+
         }
+
     }
 }

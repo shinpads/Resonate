@@ -242,8 +242,8 @@ public class SQLConnection {
         }
         return new ArrayList<>();
     }
-    public boolean saveEvent(String a,String b,String c,String d,String e,String f,String g,String h){
-        String update = "INSERT INTO Eventz(Event_title,Event_artist,Event_date,Event_time,Event_location,Event_cost,Event_desc,Event_address) VALUES('"+a+"','"+b+"','"+c+"','"+d+"','"+e+"','"+f+"','"+g+"','"+h+"')";
+    public boolean saveEvent(String a,String b,String c,String d,String e,String f,String g){
+        String update = "INSERT INTO Eventz(Event_title,Event_artist,Event_date,Event_time,Event_location,Event_cost,Event_desc) VALUES('"+a+"','"+b+"','"+c+"','"+d+"','"+e+"','"+f+"','"+g+"')";
         try{
             Statement statement = con.createStatement();
             statement.executeUpdate(update);

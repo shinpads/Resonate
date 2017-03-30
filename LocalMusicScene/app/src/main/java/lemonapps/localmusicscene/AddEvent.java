@@ -14,7 +14,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class AddEvent extends AppCompatActivity {
-    EditText eTitle,eArtist,eLocation,eDesc,eCost,eAddress;
+    EditText eTitle,eArtist,eLocation,eDesc,eCost;
     TimePicker eTime;
     DatePicker eDate;
     Button btnAddEvent;
@@ -27,7 +27,6 @@ public class AddEvent extends AppCompatActivity {
         eCost = (EditText)findViewById(R.id.priceField);
         eTitle = (EditText)findViewById(R.id.showTitleField);
         eArtist = (EditText)findViewById(R.id.bandNameField);
-        eAddress = (EditText)findViewById(R.id.venueAddressField);
         eTime = (TimePicker) findViewById(R.id.timeField);
         eDate = (DatePicker) findViewById(R.id.dateField);
         eLocation = (EditText)findViewById(R.id.venueField);
@@ -41,7 +40,7 @@ public class AddEvent extends AppCompatActivity {
         btnAddEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(con.saveEvent(eTitle.getText().toString(),eArtist.getText().toString(),dateStr,time,eLocation.getText().toString(),eCost.getText().toString(),eDesc.getText().toString(),eAddress.getText().toString())){
+                if(con.saveEvent(eTitle.getText().toString(),eArtist.getText().toString(),dateStr,time,eLocation.getText().toString(),eCost.getText().toString(),eDesc.getText().toString())){
                     Toast.makeText(getApplicationContext(),"Event Saved",Toast.LENGTH_SHORT).show();
                     finish();
                 }
