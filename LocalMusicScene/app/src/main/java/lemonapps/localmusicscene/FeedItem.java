@@ -16,6 +16,7 @@ public class FeedItem {
     private String cost = "";
     private String desc = "";
     private String address= "";
+    public int id = 0;
     public String getTitle(){return title;}
     public void setTitle(String title){this.title = title;}
 
@@ -39,4 +40,7 @@ public class FeedItem {
 
     public String getAddress(){return address;}
     public void setAddress(String address){this.address = address;}
+
+    public int getid(){return id;}
+    public void setid(int id){this.id =id;}
 }

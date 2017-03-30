@@ -14,6 +14,7 @@ public class EventFull extends AppCompatActivity {
     TextView title,artist,date,time,location,cost,desc,address;
     ImageView picture;
     ImageButton ticket;
+    int id = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,5 +38,6 @@ public class EventFull extends AppCompatActivity {
         cost.setText(values.get(5));
         desc.setText(values.get(6));
         address.setText(values.get(7));
+        id = Integer.parseInt(values.get(8));
     }
 }

@@ -213,12 +213,14 @@ public class SQLConnection {
         }
         return false;
     }
+
     /*
         HOME PAGE FEED STUFF
 
      */
+
     public List<FeedItem> fetchFeed(String location, int offset, int ammount){
-        String query = "SELECT * FROM Eventz ORDER BY Event_ID DESC OFFSET " + offset + " ROWS FETCH NEXT "+ ammount +" ROWS ONLY";
+        String query = "SELECT * FROM Eventz ORDER BY Event_date DESC OFFSET " + offset + " ROWS FETCH NEXT "+ ammount +" ROWS ONLY";
         FeedItem curFeedItem;
         List<FeedItem> feedItems = new ArrayList<FeedItem>();
         try{
@@ -235,6 +237,7 @@ public class SQLConnection {
                 curFeedItem.setTime(rs.getString("Event_time"));
                 curFeedItem.setTitle(rs.getString("Event_title"));
                 curFeedItem.setAddress(rs.getString("Event_address"));
+                curFeedItem.setid(rs.getInt("Event_id"));
                 feedItems.add(curFeedItem);
             }
             return feedItems;
