@@ -46,7 +46,7 @@
     <string name="update">Update</string>
     <string name="addEvent">Add Event</string>
     <string name="showName">Show Name</string>
-    <string name="perfBands">Band(s) Performing</string>
+    <string name="perfBands">Artist(s) Performing</string>
     <string name="tos">Time of Show</string>
     <string name="dos">Date of Show</string>
     <string name="venName">Venue Name</string>

@@ -38,20 +38,26 @@
             android:name=".ManageBand"
             android:screenOrientation="portrait"
             android:theme="@style/ResonateTheme" />
-        <activity android:name=".ForgotPasswordCode" />
-        <activity android:name=".ForgotPaswordChangePassword" />
+        <activity android:name=".ForgotPasswordCode"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ForgotPaswordChangePassword"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".SplashScreen"
-            android:theme="@style/splashTheme">
+            android:theme="@style/splashTheme"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Profile" />
-        <activity android:name=".AddEvent" />
-        <activity android:name=".EventFull"></activity>
+        <activity android:name=".Profile"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".AddEvent"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".EventFull"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

@@ -52,7 +52,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/cardview_dark_background">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -70,164 +71,183 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Perivale, Joncro, False Face Society"
-        android:textColor="@color/blk"
+        android:textColor="@color/ltegry"
         android:textSize="22sp"
         android:fontFamily="serif-monospace"
         android:gravity="center_horizontal"
         android:id="@+id/fullShowBand"
         android:maxLines="3"
-        android:layout_marginTop="5dp"/>
+        android:layout_marginTop="5dp" />
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="3"
-        android:shrinkColumns="0"
-        android:stretchColumns="2"
-        android:layout_margin="5dp">
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/cardDateIcon"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/cal_dark"
-                android:layout_marginEnd="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="5dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_column="1" />
-
-            <TextView
-                android:id="@+id/fullShowDate"
+            <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Wednesday,September 25th 2017"
-                android:textColor="@color/blk"
-                android:fontFamily="serif-monospace"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginStart="5dp"
-                android:textSize="16sp"
-                android:layout_column="2"/>
+                android:layout_weight="3"
+                android:shrinkColumns="0"
+                android:stretchColumns="2"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginEnd="15dp"
+                >
 
-        </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/cardDateIcon"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/date_icon"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_column="1" />
 
-            <ImageView
-                android:id="@+id/cardClockIcon"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/clock_dark"
-                android:layout_marginEnd="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="5dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_column="1"/>
+                    <TextView
+                        android:id="@+id/fullShowDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Wednesday,September 25th 2017"
+                        android:textColor="@color/ltegry"
+                        android:fontFamily="serif-monospace"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginStart="5dp"
+                        android:textSize="16sp"
+                        android:layout_column="2"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/cardClockIcon"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/clock"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_column="1"/>
+
+                    <TextView
+                        android:id="@+id/fullShowTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="7:00pm"
+                        android:textColor="@color/ltegry"
+                        android:fontFamily="serif-monospace"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginStart="5dp"
+                        android:textSize="15sp"
+                        android:gravity="center_vertical"
+                        android:layout_column="2"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/cardHouseIcon"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/house"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_column="1"/>
+
+                    <TextView
+                        android:id="@+id/fullShowVenue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="The Rockpile"
+                        android:textColor="@color/ltegry"
+                        android:fontFamily="serif-monospace"
+                        android:layout_marginTop="11dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginStart="5dp"
+                        android:textSize="15sp"
+                        android:layout_column="2"/>
+
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:id="@+id/fullShowVenueAdd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="3135 Dover Crescent"
+                        android:textColor="@color/medgry"
+                        android:fontFamily="serif-monospace"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginStart="5dp"
+                        android:textSize="15sp"
+                        android:layout_column="2"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/cardMoneyIcon"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/money"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_column="1"/>
+
+                    <TextView
+                        android:id="@+id/fullShowCost"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Free"
+                        android:textColor="@color/ltegry"
+                        android:fontFamily="serif-monospace"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginStart="5dp"
+                        android:textSize="15sp"
+                        android:layout_column="2"/>
+                </TableRow>
+
+            </TableLayout>
 
             <TextView
-                android:id="@+id/fullShowTime"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="7:00pm"
-                android:textColor="@color/blk"
-                android:fontFamily="serif-monospace"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginStart="5dp"
-                android:textSize="15sp"
-                android:gravity="center_vertical"
-                android:layout_column="2"/>
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/cardHouseIcon"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/venue_dark"
-                android:layout_marginEnd="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_column="1"/>
-
-            <TextView
-                android:id="@+id/fullShowVenue"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="The Rockpile"
-                android:textColor="@color/blk"
-                android:fontFamily="serif-monospace"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginStart="5dp"
-                android:textSize="15sp"
-                android:layout_column="2"/>
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/cardMoneyIcon"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/money_dark"
-                android:layout_marginEnd="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_column="1"/>
-
-            <TextView
-                android:id="@+id/fullShowCost"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Free"
-                android:textColor="@color/blk"
-                android:fontFamily="serif-monospace"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginStart="5dp"
-                android:textSize="15sp"
-                android:layout_column="2"/>
-        </TableRow>
-
-    </TableLayout>
-
-    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Perivale, Joncro, False Face Society are some good bands that aree gonna be performing and you should go see them because they make good music not really but its free and i need to type a lot to test some random stuff about spacing and such so it's good"
-        android:textColor="@color/blk"
+        android:textColor="@color/ltegry"
         android:textSize="15sp"
         android:fontFamily="serif-monospace"
         android:gravity="center_horizontal"
         android:id="@+id/fullShowDesc"
         android:layout_margin="5dp"/>
 
-    </LinearLayout>
+        </LinearLayout>
 
     </ScrollView>
 
