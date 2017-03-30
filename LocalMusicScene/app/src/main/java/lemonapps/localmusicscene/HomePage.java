@@ -238,6 +238,7 @@ public class HomePage extends AppCompatActivity {
         ArrayList<String> values = new ArrayList<>();
         values.add(fi.getTitle()); values.add(fi.getArtist()); values.add(fi.getDate()); values.add(fi.getTime()); values.add(fi.getLocation()); values.add(fi.getCost());
         values.add (fi.getDesc());
+        values.add(fi.getAddress());
         b.putStringArrayListExtra("Values",values);
         context.startActivity(b);
     }

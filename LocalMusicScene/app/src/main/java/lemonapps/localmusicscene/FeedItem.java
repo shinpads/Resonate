@@ -1,7 +1,7 @@
 package lemonapps.localmusicscene;
 
 
-import java.util.Date;
+
 
 /**
  * Created by Rob on 2017-03-14.
@@ -15,7 +15,7 @@ public class FeedItem {
     private String location = "";
     private String cost = "";
     private String desc = "";
-
+    private String address= "";
     public String getTitle(){return title;}
     public void setTitle(String title){this.title = title;}
 
@@ -36,4 +36,7 @@ public class FeedItem {
 
     public String getDesc(){return desc;}
     public void setDesc(String desc){this.desc = desc;}
+
+    public String getAddress(){return address;}
+    public void setAddress(String address){this.address = address;}
 }

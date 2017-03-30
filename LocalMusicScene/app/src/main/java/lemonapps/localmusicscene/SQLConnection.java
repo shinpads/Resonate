@@ -234,6 +234,7 @@ public class SQLConnection {
                 curFeedItem.setLocation(rs.getString("Event_location"));
                 curFeedItem.setTime(rs.getString("Event_time"));
                 curFeedItem.setTitle(rs.getString("Event_title"));
+                curFeedItem.setAddress(rs.getString("Event_address"));
                 feedItems.add(curFeedItem);
             }
             return feedItems;
